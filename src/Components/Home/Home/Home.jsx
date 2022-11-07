@@ -8,7 +8,7 @@ const Home = () => {
 
 
             <div className="bg-indigo-600">
-                <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+                <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
                     <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
                         <div className="flex flex-col sm:text-center sm:mb-0">
                             <a href="/" className="sm:mx-auto">
@@ -28,7 +28,7 @@ const Home = () => {
                                     </svg>
                                 </div>
                             </a>
-                            <div className="max-w-xl  md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+                            <div className="max-w-xl md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
                                 <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-white sm:text-4xl md:mx-auto">
                                     <span className="relative inline-block">
                                         <svg
@@ -55,11 +55,10 @@ const Home = () => {
                                         </svg>
                                         <span className="relative">The</span>
                                     </span>{' '}
-                                    quick, brown fox jumps over a lazy dog
+                                    Give Me Your Review For Better Services
                                 </h2>
                                 <p className="text-base text-indigo-100 md:text-lg">
-                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                    accusantium doloremque rem aperiam, eaque ipsa quae.
+                                    In the medical sciences, the importance of review articles is rising. When clinicians want to update their knowledge and generate guidelines about a topic, they frequently use reviews as a starting point. The value of a review is associated with what has been done, what has been found and how these findings are presented.
                                 </p>
                             </div>
                         </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaBars, FaDochub, FaHireAHelper } from 'react-icons/fa';
+import { FaBars, FaDochub, } from 'react-icons/fa';
 
 
 const Navbar = () => {
@@ -20,18 +20,18 @@ const Navbar = () => {
                         >
                             <span className='text-5xl ml-3 text-green-50'><FaDochub /></span>
                             <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
-                                Company
+                                DocHouse
                             </span>
                         </Link>
                         <ul className="flex items-center hidden space-x-8 lg:flex">
                             <li>
                                 <Link
-                                    to="/product"
+                                    to="/services"
                                     aria-label="Our product"
                                     title="Our product"
                                     className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                                 >
-                                    Product
+                                    Services
                                 </Link>
                             </li>
 
@@ -116,7 +116,7 @@ const Navbar = () => {
                                                 <span className='text-5xl ml-3'><FaDochub /></span>
 
                                                 <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                                                    Company
+                                                    DocHouse
                                                 </span>
                                             </Link>
                                         </div>
@@ -135,12 +135,12 @@ const Navbar = () => {
                                         <ul className="space-y-4">
                                             <li>
                                                 <Link
-                                                    to="/"
+                                                    to="/services"
                                                     aria-label="Our product"
                                                     title="Our product"
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                                 >
-                                                    Product
+                                                    Services
                                                 </Link>
                                             </li>
                                             <li>
@@ -193,7 +193,7 @@ const Navbar = () => {
                                                     Sign up
                                                 </Link>
                                             </li>
-                                          
+
                                         </ul>
                                     </nav>
                                 </div>
