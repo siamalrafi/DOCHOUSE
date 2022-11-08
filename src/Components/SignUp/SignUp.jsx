@@ -11,8 +11,9 @@ const SignUp = () => {
 
         const form = event.target
         const name = form.name.value;
+        const email = form.email.value;
         const password = form.password.value;
-        createUser(name, password)
+        createUser(email, password)
             .then((result) => {
                 const user = result.user;
                 console.log(user);
@@ -57,7 +58,7 @@ const SignUp = () => {
 
 
 
-                    <div className="flex items-center pt-4 space-x-1">
+                    <div className="flex items-center space-x-1">
                         <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
                         <p className="px-3 text-sm dark:text-gray-400">Sign Up with social accounts</p>
                         <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
