@@ -8,7 +8,6 @@ const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    console.log(user);
 
     return (
         <div className=" dark:bg-gray-800 p-2">

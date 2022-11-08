@@ -1,54 +1,48 @@
 [
     {
-        "_id": "63696d072f5cddadde7615f7",
         "img": "https://i.ibb.co/cC7dW3s/img1.jpg",
         "price": 66,
-        "ratice": 3,
+        "rating": 3,
         "name": "Otolaryngology with DOCHOUSE",
         "company": "DOCHOUSE",
         "description": " Even though it sounds like a mouthful, otolaryngologists actually specialize in the ears, nose, and throat. And as of the 2022 Medscape study, these head and neck specialists are the most likely to report happy marriages. According to the CMA, otolaryngologists work relatively stable working hours (at around 60 hours per week) and earn around $318,950 a year after overhead. With 65% of them satisfied with their current professional life, and almost half of them satisfied with their work life balance, otolaryngologists have the potential to be one of the most satisfied physicians overall."
     },
     {
-        "_id": "63696d07f3527de88a43cb1a",
         "img": "https://i.ibb.co/RQH3jMR/img-5.jpg",
         "price": 86,
-        "ratice": 3,
+        "rating": 3,
         "name": "Pediatrics with DOCHOUSE",
         "company": "DOCHOUSE",
         "description": " If you love kids, then this will be one of the most satisfying and fulfilling medical specialties for you. As a Pediatrician, your primary focus would be on the physical, emotional, and social health of infants and kids. According to the nature.com survey, these doctors show pride in their profession, a concern for the well-being of children, and love having the opportunity to do good — all of which gives meaning to their work and keeps them happier overall. "
     },
     {
-        "_id": "63696d076d8cecb6f655c80b",
         "img": "https://i.ibb.co/MnFTgWd/images.jpg",
         "price": 52,
-        "ratice": 3,
+        "rating": 3,
         "name": "Nephrology with DOCHOUSE",
         "company": "DOCHOUSE",
         "description": "A nephrologist treats diseases and infections of the kidneys and urinary system. Since you work on finding solutions to highly specialized issues, nephrologists are often connected to teaching hospitals or to academic medicine in some capacity. This can sometimes mean longer hours, but nephrologists don't seem to mind"
     },
     {
-        "_id": "63696d073ba2e20448122bd5",
         "img": "https://i.ibb.co/QQ3vVYR/download.jpg",
         "price": 84,
-        "ratice": 3,
+        "rating": 3,
         "name": "Dermatology with DOCHOUSE",
         "company": "DOCHOUSE",
         "description": "  A dermatologist focuses on the problems of the skin, mouth, external genitalia, hair, and nails. This specialty, like family medicine, offers a fixed number of office hours and an opportunity to interact and form long-term relationships with your patients. It frequently appears in lists of the happiest medical specialties, owing to good work life balance and high pay. "
     },
     {
-        "_id": "63696d07c83d5155a2b354f7",
         "img": "https://i.ibb.co/D1C16HY/img3.jpg",
         "price": 20,
-        "ratice": 3,
+        "rating": 3,
         "name": "Anesthesiology with DOCHOUSE",
         "company": "DOCHOUSE",
         "description": " As an Anesthesiologist, your job is to provide pain management, critical care, and perioperative care. You may have to work long hours, but you’ll have better control over your time. This is considered to be one of the less stressful specialties. Moreover, if you’re an introvert then this doctor specialty can be great for you since there’s very little to no patient interaction (no time for small talk if you’ve done a good job putting the patient to sleep!). "
     },
     {
-        "_id": "63696d070b5df4506e901499",
         "img": "https://i.ibb.co/Jq6Bd00/img4.jpg",
         "price": 89,
-        "ratice": 5,
+        "rating": 5,
         "name": "Ophthalmology with DOCHOUSE",
         "company": "DOCHOUSE",
         "description": " As an Ophthalmologist, you'll be involved with the diagnosis and treatment of diseases and issues that are associated with the eye. Ophthalmology is one of the highest paid specialties in Canada, and since doctors typically work out of private clinics, they have good control over their working hours and a not-too-stressful patient load. The specialty offers the opportunity to build patient-loyalty over a period of time. "
