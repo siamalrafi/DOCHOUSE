@@ -87,7 +87,7 @@ const Home = () => {
 
             <div className='grid justify-items-center mb-5 py-8 bg-slate-400'>
                 <Link to={'/services'}>
-                    <button className="btn btn-active btn-primary">See All</button>
+                    <button className="btn btn-active btn-primary">See All Services</button>
 
                 </Link>
             </div>

@@ -16,16 +16,17 @@ const SignUp = () => {
 
     const handleSignUp = (event) => {
         event.preventDefault();
-
+        
         const form = event.target
         const name = form.name.value;
+        const photoURI = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
 
         createUser(email, password)
             .then((result) => {
                 const user = result.user;
-                nameUpdate(name);
+                nameUpdate(name,photoURI);
                 notify();
                 console.log(user);
             })
@@ -61,6 +62,11 @@ const SignUp = () => {
                             <label htmlFor="username" className="block dark:text-gray-400">Username</label>
                             <input
                                 name='name' type="text" placeholder="Username" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                        </div>
+                        <div className=" text-sm">
+                            <label htmlFor="photoURL" className="block dark:text-gray-400">photoURL</label>
+                            <input
+                                name='photoURL' type="text" placeholder="PhotoURL" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
                         </div>
                         <div className=" text-sm">
                             <label htmlFor="Email" className="block dark:text-gray-400">Email</label>

@@ -1,19 +1,59 @@
 import React, { useContext } from 'react';
 import { FaBookmark, FaCommentDots, FaShareAlt, FaStar } from 'react-icons/fa';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 
 const Details = () => {
+    const notify = () => toast.success("Successfully Review Added!");
     const { user } = useContext(AuthContext);
     const details = useLoaderData();
     const { img, _id, name, price, rating, description } = details;
 
-    console.log(user);
+
+    const handleReview = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const name = user?.displayName;
+        const email = user?.email;
+        const serviceId = _id;
+        const photoURL = user?.photoURL;
+        const massage = form.massage.value;
+        // console.log(name, email, serviceId, photoURL, massage);
+
+        const review = {
+            name,
+            email,
+            serviceId,
+            photoURL,
+            massage,
+        };
+
+        fetch(`http://localhost:5000/reviews`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(review)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    notify();
+                    form.reset();
+                }
+                console.log(data)
+            })
+            .catch(error => console.log(error))
+    }
+
+
     return (
         <div>
             <div className='grid justify-items-center my-5'>
@@ -53,26 +93,88 @@ const Details = () => {
                         </div>
 
                     </div>
+                </div>
+
+                <h1 className="text-3xl bg-red-400 my-5 rounded">Some Reivew</h1>
+
+                <div className="overflow-x-auto w-full">
+                    <table className="table w-full">
+
+                        <thead>
+                            <tr>
+                                <th> </th>
+                                <th>Name</th>
+                                <th>Job</th>
+                                <th>Favorite Color</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>
+                                    <button className="btn btn-sm btn-primary">Delete</button>
+                                </th>
+                                <td>
+                                    <div className="flex items-center space-x-3">
+                                        <div className="avatar">
+                                            <div className="mask mask-squircle w-12 h-12">
+                                                <img src="/tailwind-css-component-profile-5@56w.png" alt="Avatar Tailwind CSS Component" />
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div className="font-bold">Yancy Tear</div>
+                                            <div className="text-sm opacity-50">Brazil</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    Wyman-Ledner
+                                    <br />
+                                    <span className="badge badge-ghost badge-sm">Community Outreach Specialist</span>
+                                </td>
+                                <td>Indigo</td>
+                                <th>
+                                    <button className="btn btn-ghost btn-xs">details</button>
+                                </th>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
 
 
-                    <div className='grid justify-items-stretch'>
-                        {
-                            user?.email ?
-                                <>
-                                    <button className='btn btn-secondary'>Add Review</button>
-                                </>
-                                :
-                                <>
-                                    <button className='btn btn-secondary'>Please login to Review</button>
-                                </>
-                        }
+                <h1 className="text-3xl bg-green-500 my-10">Your Review</h1>
 
+                <div className='bg-gray-500 w-full'>
+                    <form onSubmit={handleReview}>
+                        <h2 className="text-center my-5 text-4xl">{name}</h2>
+                        <div className='grid justify-items-center'>
+                            <input defaultValue={user?.displayName} type="text" placeholder="Type Your Name" className="mt-2 input input-bordered input-error w-full max-w-xs" />
+                            <input defaultValue={user?.email} type="text" placeholder="Type Your Email" className="mt-2 input input-bordered input-error w-full max-w-xs" />
+                            <input defaultValue={user?.photoURL} type="text" placeholder="Type Your PhotoURL" className="mt-2 input input-bordered input-error w-full max-w-xs" />
+                            <input defaultValue={_id} type="text" placeholder="Type here" className="mt-2 input input-bordered input-error w-full max-w-xs" />
+                        </div>
+                        <textarea name='massage' className="textarea w-full mt-3 textarea-secondary" placeholder="Type Your Massage..."></textarea>
+                        <div className='text-center py-5'>
 
+                            {
+                                user?.uid ?
+                                    <>
+                                        <input type="submit" className='btn text-center btn-active btn-success' value="Submit" />
+                                    </>
+                                    :
+                                    <>
+                                        <Link to={'/login'} className='btn text-center btn-active btn-success'>Please Login First </Link>
+                                    </>
+                            }
 
-                    </div>
+                        </div>
+                    </form>
+                    <ToastContainer position="top-center" />
+
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
