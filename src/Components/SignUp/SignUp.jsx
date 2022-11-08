@@ -1,21 +1,53 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 
 const SignUp = () => {
+    const { createUser } = useContext(AuthContext);
+
+    const handleSignUp = (event) => {
+        event.preventDefault();
+
+        const form = event.target
+        const name = form.name.value;
+        const password = form.password.value;
+        createUser(name, password)
+            .then((result) => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+    };
+
+
     return (
+
         <div>
             <div className='grid justify-items-center my-5'>
                 <div className="w-full max-w-md p-8 rounded-xl dark:bg-gray-900 dark:text-gray-100">
                     <h1 className="text-2xl font-bold text-center">Sign Up</h1>
-                    <form className="space-y-6 ng-untouched ng-pristine ng-valid">
-                        <div className="space-y-1 text-sm">
+                    <form
+                        onSubmit={handleSignUp}
+                        className=" ng-untouched ng-pristine ng-valid">
+                        <div className=" text-sm">
                             <label htmlFor="username" className="block dark:text-gray-400">Username</label>
-                            <input type="text" name="username" id="username" placeholder="Username" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                            <input
+                                name='name' type="text" placeholder="Username" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
                         </div>
-                        <div className="space-y-1 text-sm">
+                        <div className=" text-sm">
+                            <label htmlFor="Email" className="block dark:text-gray-400">Email</label>
+                            <input
+                                name='email' type="email" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                        </div>
+                        <div className=" text-sm">
                             <label htmlFor="password" className="block dark:text-gray-400">Password</label>
-                            <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                            <input
+                                name='password'
+                                type="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
                             <div className="flex justify-end text-xs dark:text-gray-400">
                                 <a rel="noopener noreferrer" >Forgot Password?</a>
                             </div>
