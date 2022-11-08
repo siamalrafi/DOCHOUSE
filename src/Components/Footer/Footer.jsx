@@ -12,7 +12,7 @@ const Footer = () => {
                                 <span className='text-5xl ml-5 text-green-50'><FaDochub /></span>
 
                             </div>
-                            <span className="self-center text-2xl font-semibold">Brand name</span>
+                            <span className="self-center text-2xl font-semibold">DOCHOUSE</span>
                         </a>
                     </div>
                     <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">

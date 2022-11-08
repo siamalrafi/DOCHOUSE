@@ -1,17 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
+
+
+    
+
+    useEffect(() => {
+        fetch('service.json')
+            .then(res => res.json())
+            .then(data => {
+
+                console.log(data);
+            })
+
+
+    }, [])
+
+
+
+
     return (
         <div>
-
-
-
-
             <div className="bg-indigo-600">
                 <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
                     <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
                         <div className="flex flex-col sm:text-center sm:mb-0">
-                            <a href="/" className="sm:mx-auto">
+                            <Link href="/" className="sm:mx-auto">
                                 <div className="flex items-center justify-center w-12 h-6 rounded-full bg-teal-accent-400">
                                     <svg
                                         className="w-10 text-white h-5 text-deep-purple-900"
@@ -27,7 +42,7 @@ const Home = () => {
                                         />
                                     </svg>
                                 </div>
-                            </a>
+                            </Link>
                             <div className="max-w-xl md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
                                 <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-white sm:text-4xl md:mx-auto">
                                     <span className="relative inline-block">
@@ -66,41 +81,40 @@ const Home = () => {
                 </div>
             </div>
 
-
-
-
-
-
             <div className="carousel w-full h-96">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src="https://placeimg.com/800/200/arch" className=" w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide4" className="btn btn-circle">❮</a>
-                        <a href="#slide2" className="btn btn-circle">❯</a>
+                        <Link href="#slide4" className="btn btn-circle">❮</Link>
+                        <Link href="#slide2" className="btn btn-circle">❯</Link>
                     </div>
                 </div>
                 <div id="slide2" className="carousel-item relative w-full">
                     <img src="https://placeimg.com/800/200/arch" className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide1" className="btn btn-circle">❮</a>
-                        <a href="#slide3" className="btn btn-circle">❯</a>
+                        <Link href="#slide1" className="btn btn-circle">❮</Link>
+                        <Link href="#slide3" className="btn btn-circle">❯</Link>
                     </div>
                 </div>
                 <div id="slide3" className="carousel-item relative w-full">
                     <img src="https://placeimg.com/800/200/arch" className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide2" className="btn btn-circle">❮</a>
-                        <a href="#slide4" className="btn btn-circle">❯</a>
+                        <Link href="#slide2" className="btn btn-circle">❮</Link>
+                        <Link href="#slide4" className="btn btn-circle">❯</Link>
                     </div>
                 </div>
                 <div id="slide4" className="carousel-item relative w-full">
                     <img src="https://placeimg.com/800/200/arch" className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide3" className="btn btn-circle">❮</a>
-                        <a href="#slide1" className="btn btn-circle">❯</a>
+                        <Link href="#slide3" className="btn btn-circle">❮</Link>
+                        <Link href="#slide1" className="btn btn-circle">❯</Link>
                     </div>
                 </div>
             </div>
+
+
+
+
 
 
 
