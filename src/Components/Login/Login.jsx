@@ -40,7 +40,7 @@ const Login = () => {
 
 
     return (
-        <div className='grid justify-items-center my-5'>
+        <div className='grid justify-items-center my-5 '>
             <div className="w-full max-w-md p-8 rounded-xl dark:bg-gray-900 dark:text-gray-100">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
                 <form

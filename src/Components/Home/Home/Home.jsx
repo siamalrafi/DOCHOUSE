@@ -59,7 +59,6 @@ const Home = () => {
                                                 height="24"
                                             />
                                         </svg>
-                                        <span className="relative">The</span>
                                     </span>{' '}
                                     Give Me Your Review For Better Services
                                 </h2>
@@ -74,7 +73,7 @@ const Home = () => {
 
 
 
-            <div className='grid lg:grid-cols-3 sm:grid-cols-1 justify-items-center'>
+            <div className='grid lg:grid-cols-3 sm:grid-cols-1 justify-items-center bg-blue-100'>
                 {
                     services.map(service =>
                         <Card

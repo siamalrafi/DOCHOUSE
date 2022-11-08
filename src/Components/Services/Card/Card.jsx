@@ -14,7 +14,7 @@ const Card = ({ service }) => {
 
     return (
         <div>
-            <div className="card mt-6 mb-3 w-80 bg-gray-300 shadow-xl">
+            <div className="card mt-6 mb-3 w-80 bg-gray-400 shadow-xl">
                 <figure className="px-5 pt-5">
                     <PhotoProvider>
                         <PhotoView className='w-80 h-full' src={img}>
