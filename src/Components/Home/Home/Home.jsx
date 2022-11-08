@@ -1,10 +1,12 @@
 import React, { useContext, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
- 
+
 
 const Home = () => {
-    const { userna } = useContext(AuthContext)
+    const { userna } = useContext(AuthContext);
+    const data = useLoaderData();
+    console.log(data);
 
     /* useEffect(() => {
         fetch('service.json')
@@ -17,11 +19,11 @@ const Home = () => {
 
 
 
-    
+
 
     return (
         <div>
-            <div className="bg-indigo-600">
+            <div className="bg-indigo-900">
                 <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
                     <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
                         <div className="flex flex-col sm:text-center sm:mb-0">
@@ -78,38 +80,45 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+            </div> 
+
+         
+
+
+
+
+
+            <div>
+                <section className="p-6 dark:bg-gray-900 dark:text-gray-100">
+                    <div className="container mx-auto grid justify-center grid-cols-2 text-center lg:grid-cols-3">
+                        <div className="flex flex-col justify-start m-2 lg:m-6">
+                            <p className="text-4xl font-bold leading-none lg:text-6xl">50+</p>
+                            <p className="text-sm sm:text-base">Clients</p>
+                        </div>
+                        <div className="flex flex-col justify-start m-2 lg:m-6">
+                            <p className="text-4xl font-bold leading-none lg:text-6xl">89K</p>
+                            <p className="text-sm sm:text-base">Followers on social media</p>
+                        </div>
+                        <div className="flex flex-col justify-start m-2 lg:m-6">
+                            <p className="text-4xl font-bold leading-none lg:text-6xl">3</p>
+                            <p className="text-sm sm:text-base">Published books</p>
+                        </div>
+                        <div className="flex flex-col justify-start m-2 lg:m-6">
+                            <p className="text-4xl font-bold leading-none lg:text-6xl">8</p>
+                            <p className="text-sm sm:text-base">TED talks</p>
+                        </div>
+                        <div className="flex flex-col justify-start m-2 lg:m-6">
+                            <p className="text-4xl font-bold leading-none lg:text-6xl">22</p>
+                            <p className="text-sm sm:text-base">Years of experience</p>
+                        </div>
+                        <div className="flex flex-col justify-start m-2 lg:m-6">
+                            <p className="text-4xl font-bold leading-none lg:text-6xl">10+</p>
+                            <p className="text-sm sm:text-base">Workshops</p>
+                        </div>
+                    </div>
+                </section>
             </div>
 
-            <div className="carousel w-full h-96">
-                <div id="slide1" className="carousel-item relative w-full">
-                    <img src="https://placeimg.com/800/200/arch" className=" w-full" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <Link href="#slide4" className="btn btn-circle">❮</Link>
-                        <Link href="#slide2" className="btn btn-circle">❯</Link>
-                    </div>
-                </div>
-                <div id="slide2" className="carousel-item relative w-full">
-                    <img src="https://placeimg.com/800/200/arch" className="w-full" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <Link href="#slide1" className="btn btn-circle">❮</Link>
-                        <Link href="#slide3" className="btn btn-circle">❯</Link>
-                    </div>
-                </div>
-                <div id="slide3" className="carousel-item relative w-full">
-                    <img src="https://placeimg.com/800/200/arch" className="w-full" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <Link href="#slide2" className="btn btn-circle">❮</Link>
-                        <Link href="#slide4" className="btn btn-circle">❯</Link>
-                    </div>
-                </div>
-                <div id="slide4" className="carousel-item relative w-full">
-                    <img src="https://placeimg.com/800/200/arch" className="w-full" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <Link href="#slide3" className="btn btn-circle">❮</Link>
-                        <Link href="#slide1" className="btn btn-circle">❯</Link>
-                    </div>
-                </div>
-            </div>
 
 
 
@@ -143,6 +152,17 @@ const Home = () => {
                     </div>
                 </section>
             </div>
+
+
+
+
+
+
+
+
+
+
+
 
         </div>
     );

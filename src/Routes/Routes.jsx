@@ -5,6 +5,8 @@ import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import Login from "../Components/Login/Login";
 import SignUp from '../Components/SignUp/SignUp';
 import Services from '../Components/Services/Services';
+import Details from "../Components/Details/Details";
+import { faTeeth } from "@fortawesome/free-solid-svg-icons";
 
 
 const router = createBrowserRouter([
@@ -15,11 +17,16 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch('http://localhost:5000/'),
             },
             {
                 path: '/services',
                 element: <Services></Services>
+            }, {
+                path: '/services/:id',
+                element: <Details></Details>,
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
                 path: '/login',
@@ -28,7 +35,8 @@ const router = createBrowserRouter([
             {
                 path: '/signup',
                 element: <SignUp></SignUp>
-            }
+            },
+
         ]
     }
 ])
