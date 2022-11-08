@@ -22,8 +22,7 @@ const Login = () => {
                 console.log(error);
             });
     };
-
-
+    
     const handleGoogleSign = () => {
         googleSignIn()
             .then((result) => {
@@ -34,8 +33,7 @@ const Login = () => {
                 console.log(error);
             });
 
-    }
-
+    };
 
 
 

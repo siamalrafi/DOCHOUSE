@@ -6,10 +6,7 @@ import Card from '../../Services/Card/Card';
 
 const Home = () => {
     const { user } = useContext(AuthContext);
-
     const services = useLoaderData();
-
-
 
     return (
         <div>
@@ -88,6 +85,12 @@ const Home = () => {
             </div>
 
 
+            <div className='grid justify-items-center mb-5 py-10 bg-slate-400'>
+                <Link to={'/services'}>
+                    <button className="btn btn-active btn-primary">See All</button>
+
+                </Link>
+            </div>
 
 
 

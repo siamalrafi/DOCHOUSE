@@ -21,12 +21,9 @@ const Services = () => {
 
 
     return (
-        <div className='dark:bg-gray-900'>
-
-
-
-            <div>
-                <div className="p-6 py-12 mt-5 dark:bg-violet-400 dark:text-gray-900">
+        <div className=' dark:bg-gray-800 '> 
+            <div className=''>
+                <div className="p-6  mt-5 dark:bg-violet-400 dark:text-gray-900">
                     <div className="container mx-auto">
                         <div className="flex flex-col lg:flex-row items-center justify-between">
                             <h2 className="text-center text-6xl tracking-tighter font-bold">Up to

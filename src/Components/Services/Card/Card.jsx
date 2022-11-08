@@ -9,12 +9,12 @@ import 'react-photo-view/dist/react-photo-view.css';
 
 const Card = ({ service }) => {
 
-    const { img, _id, title, name, price, ratice, description } = service;
-    console.log(service);
+    const { img, _id, name, price, rating, description } = service;
+    
 
     return (
         <div>
-            <div className="card mt-6 mb-3 w-80 bg-gray-400 shadow-xl">
+            <div className="card mt-6 mb-3 w-80  bg-black text-white shadow-xl">
                 <figure className="px-5 pt-5">
                     <PhotoProvider>
                         <PhotoView className='w-80 h-full' src={img}>
