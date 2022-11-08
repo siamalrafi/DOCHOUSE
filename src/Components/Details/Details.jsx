@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaBookmark, FaCommentDots, FaShareAlt, FaStar } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
@@ -6,6 +6,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ReviewTable from '../ReviewTable/ReviewTable';
 
 
 
@@ -14,7 +15,18 @@ const Details = () => {
     const notify = () => toast.success("Successfully Review Added!");
     const { user } = useContext(AuthContext);
     const details = useLoaderData();
+    const [reviews, setReviews] = useState([]);
     const { img, _id, name, price, rating, description } = details;
+
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews?serviceId=${_id}`)
+            .then(res => res.json())
+            .then(data => {
+                setReviews(data);
+                // console.log(data);
+            })
+    }, [_id]);
 
 
     const handleReview = (event) => {
@@ -67,7 +79,6 @@ const Details = () => {
                         <h2 className="mb-1 text-xl font-semibold">{name}</h2>
                         <p className="text-sm dark:text-gray-400"> {description}</p>
                     </div>
-
                     <div className="flex flex-wrap justify-between">
 
                         <div className="space-x-2">
@@ -97,50 +108,18 @@ const Details = () => {
 
                 <h1 className="text-3xl bg-red-400 my-5 rounded">Some Reivew</h1>
 
-                <div className="overflow-x-auto w-full">
-                    <table className="table w-full">
+                <div>
+                    {
+                        reviews.map(review => <ReviewTable
+                            review={review}
+                            key={review._id}
+                        >
 
-                        <thead>
-                            <tr>
-                                <th> </th>
-                                <th>Name</th>
-                                <th>Job</th>
-                                <th>Favorite Color</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>
-                                    <button className="btn btn-sm btn-primary">Delete</button>
-                                </th>
-                                <td>
-                                    <div className="flex items-center space-x-3">
-                                        <div className="avatar">
-                                            <div className="mask mask-squircle w-12 h-12">
-                                                <img src="/tailwind-css-component-profile-5@56w.png" alt="Avatar Tailwind CSS Component" />
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div className="font-bold">Yancy Tear</div>
-                                            <div className="text-sm opacity-50">Brazil</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    Wyman-Ledner
-                                    <br />
-                                    <span className="badge badge-ghost badge-sm">Community Outreach Specialist</span>
-                                </td>
-                                <td>Indigo</td>
-                                <th>
-                                    <button className="btn btn-ghost btn-xs">details</button>
-                                </th>
-                            </tr>
-                        </tbody>
+                        </ReviewTable>)
+                    } 
 
-                    </table>
-                </div>
+                </div> 
+
 
 
                 <h1 className="text-3xl bg-green-500 my-10">Your Review</h1>
