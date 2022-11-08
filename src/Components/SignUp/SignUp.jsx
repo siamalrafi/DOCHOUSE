@@ -2,8 +2,16 @@ import React, { useContext } from 'react';
 import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
+
+
 
 const SignUp = () => {
+    const notify = () => toast.success("Successfully Sign Up !");
     const { createUser, nameUpdate, googleSignIn } = useContext(AuthContext);
 
     const handleSignUp = (event) => {
@@ -17,8 +25,9 @@ const SignUp = () => {
         createUser(email, password)
             .then((result) => {
                 const user = result.user;
-                nameUpdate(name)
-                // console.log(user);
+                nameUpdate(name);
+                notify();
+                console.log(user);
             })
             .catch((error) => {
                 console.log(error);
@@ -31,6 +40,7 @@ const SignUp = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user);
+                notify();
             })
             .catch((error) => {
                 console.log(error);
@@ -70,7 +80,6 @@ const SignUp = () => {
                     </form>
 
 
-
                     <div className="flex items-center space-x-1">
                         <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
                         <p className="px-3 text-sm dark:text-gray-400">Sign Up with social accounts</p>
@@ -88,7 +97,7 @@ const SignUp = () => {
                         <Link rel="noopener noreferrer" to='/login' className="underline text-green-400 text-xl m-5">Sign In</Link>
                     </p>
                 </div>
-
+                <ToastContainer position="top-center" />
             </div>
         </div>
     );

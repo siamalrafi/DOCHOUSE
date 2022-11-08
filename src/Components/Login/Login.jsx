@@ -2,9 +2,15 @@ import React, { useContext } from 'react';
 import { FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
 
 const Login = () => {
     const { googleSignIn, signIn } = useContext(AuthContext);
+    const notify = () => toast.success("Successfully Login !");
 
     const handleSignIn = (event) => {
         event.preventDefault();
@@ -17,17 +23,19 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user);
+                notify()
             })
             .catch((error) => {
                 console.log(error);
             });
     };
-    
+
     const handleGoogleSign = () => {
         googleSignIn()
             .then((result) => {
                 const user = result.user;
                 console.log(user);
+                notify()
             })
             .catch((error) => {
                 console.log(error);
@@ -39,6 +47,9 @@ const Login = () => {
 
     return (
         <div className='grid justify-items-center my-5 '>
+            {/* <button onClick={notify}>Notify !</button>
+            <ToastContainer position="top-center" /> */}
+
             <div className="w-full max-w-md p-8 rounded-xl dark:bg-gray-900 dark:text-gray-100">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
                 <form
@@ -72,7 +83,7 @@ const Login = () => {
                         aria-label="Log in with Google" className="p-3 rounded-sm">
                         <FaGoogle className='text-3xl' title='Google Sign In'> </FaGoogle>
                     </button>
-
+                    <ToastContainer position="top-center" />
                 </div>
                 <p className="text-xs text-center dark:text-gray-400">Don't have an account?
                     <Link rel="noopener noreferrer" to='/signup' className="underline text-green-400 text-xl m-5">Sign up</Link>

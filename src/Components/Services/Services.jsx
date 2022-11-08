@@ -17,8 +17,6 @@ const Services = () => {
     }, []);
 
 
-    console.log(services);
-
 
     return (
         <div className=' dark:bg-gray-800 '> 
