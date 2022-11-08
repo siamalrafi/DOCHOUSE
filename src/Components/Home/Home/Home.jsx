@@ -1,23 +1,13 @@
 import React, { useContext, useEffect } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import Card from '../../Services/Card/Card';
 
 
 const Home = () => {
-    const { userna } = useContext(AuthContext);
-    const data = useLoaderData();
-    console.log(data);
+    const { user } = useContext(AuthContext);
 
-    /* useEffect(() => {
-        fetch('service.json')
-            .then(res => res.json())
-            .then(data => {
-
-                console.log(data);
-            });
-    }, []) */
-
-
+    const services = useLoaderData();
 
 
 
@@ -80,9 +70,23 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
 
-         
+
+
+            <div className='grid lg:grid-cols-3 sm:grid-cols-1 justify-items-center'>
+                {
+                    services.map(service =>
+                        <Card
+                            service={service}
+                            key={service._id}
+
+                        >
+
+                        </Card>)
+
+                }
+            </div>
 
 
 
@@ -119,10 +123,6 @@ const Home = () => {
                 </section>
             </div>
 
-
-
-
-
             <div>
                 <section className="dark:bg-gray-600 dark:text-gray-100">
                     <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
@@ -152,14 +152,6 @@ const Home = () => {
                     </div>
                 </section>
             </div>
-
-
-
-
-
-
-
-
 
 
 
