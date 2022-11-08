@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 
 const SignUp = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, nameUpdate, googleSignIn } = useContext(AuthContext);
 
     const handleSignUp = (event) => {
         event.preventDefault();
@@ -13,7 +13,21 @@ const SignUp = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
+
         createUser(email, password)
+            .then((result) => {
+                const user = result.user;
+                nameUpdate(name)
+                // console.log(user);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+
+    const handleGoogleSign = () => {
+
+        googleSignIn()
             .then((result) => {
                 const user = result.user;
                 console.log(user);
@@ -22,8 +36,7 @@ const SignUp = () => {
                 console.log(error);
             });
 
-    };
-
+    }
 
     return (
 
@@ -64,7 +77,9 @@ const SignUp = () => {
                         <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
                     </div>
                     <div className="flex justify-center ">
-                        <button aria-label="Log in with Google" className="p-3 rounded-sm">
+                        <button
+                            onClick={handleGoogleSign}
+                            aria-label="Log in with Google" className="p-3 rounded-sm">
                             <FaGoogle className='text-3xl' title='Google Sign In'> </FaGoogle>
                         </button>
 
