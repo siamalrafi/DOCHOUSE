@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { FaStar } from 'react-icons/fa';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 
 const ReviewTable = ({ review }) => {
     const { user } = useState(AuthContext)
-    const { _id, customarName, email, massage, photoURL, serviceId, } = review;
+    const { rating, customarName, email, massage, photoURL, serviceId, } = review;
 
-
+    console.log(rating);
     return (
         <div>
             <div className="overflow-x-auto w-full">
@@ -13,13 +14,13 @@ const ReviewTable = ({ review }) => {
 
                     <thead>
                         <tr className='flex justify-around'>
-                            <th>Identity</th>
-                            <th>Review</th>
-                            <th className='mr-[-30px]'>Favorite</th>
+                            <th><b>Identity</b></th>
+                            <th><b>Review</b></th>
+                            <th className='mr-[-35px]'><b>Rating</b></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className='flex justify-items-center justify-between'>
+                        <tr className='flex  justify-items-center justify-between'>
 
                             <td>
                                 <div className="flex items-center space-x-3">
@@ -39,7 +40,7 @@ const ReviewTable = ({ review }) => {
                                 <br />
                                 <span className="badge badge-ghost badge-sm">{massage.slice(0, 50)}</span>
                             </td>
-                            <td>Good</td>
+                            <td className='ml-5'>Rating : {rating}</td>
                         </tr>
                     </tbody>
                 </table>

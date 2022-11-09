@@ -17,7 +17,7 @@ const Details = () => {
     const details = useLoaderData();
     const [reviews, setReviews] = useState([]);
     const { img, _id, name, price, rating, description } = details;
-
+ 
 
     useEffect(() => {
         fetch(`http://localhost:5000/reviews?serviceId=${_id}`)
@@ -140,9 +140,9 @@ const Details = () => {
                             <input defaultValue={name} type="text" placeholder="Service name" className="mt-2 input input-bordered input-error w-full max-w-xs" />
                             <input defaultValue={_id} type="text" placeholder="Service id" className="mt-2 input input-bordered input-error w-full max-w-xs" />
                             <input defaultValue={img} type="website" placeholder="Service img" className="mt-2 input input-bordered input-error w-full max-w-xs" />
-                            <input name='rating' type="number" placeholder="Give me Rating" className="mt-2 input input-bordered input-error w-full max-w-xs" />
+                            <input name='rating' required type="number" placeholder="Give me Rating" className="mt-2 input input-bordered input-error w-full max-w-xs" />
                         </div>
-                        <textarea name='massage' className="textarea w-full mt-3 textarea-secondary" placeholder="Type Your Massage..."></textarea>
+                        <textarea name='massage' required className="textarea w-full mt-3 textarea-secondary" placeholder="Type Your Massage..."></textarea>
                         <div className='text-center py-5'>
 
                             {
