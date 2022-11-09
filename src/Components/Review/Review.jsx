@@ -10,19 +10,29 @@ const Review = () => {
     const notify = () => toast.success("Successfully Deleted!");
     const notifyUpdate = () => toast.success("Successfully Updated!");
 
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const [myreivews, setMyReviews] = useState([]);
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/myreviews?email=${user?.email}`)
-            .then(res => res.json())
-            .then(data => {
-                setMyReviews(data);
-                // console.log(data);
+        fetch(`http://localhost:5000/myreviews?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('access_token')}`
+            },
+        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    logOut();
+                }
+                return res.json()
             })
-    }, [user?.email]);
+            .then(data => {
+                setMyReviews(data)
+                console.log('revices', data)
+            })
 
+
+    }, [user?.email]);
 
 
     const handleDelete = (id) => {
@@ -64,7 +74,7 @@ const Review = () => {
                         :
                         <>
                             <div className='flex grid-cols-1'>
-                                <h1 className='p-10 h-96 w-full  font-bold text-3xl text-gray-200 '>No Review Added</h1>
+                                <h1 className='p-10 h-96 w-full  font-bold text-2xl text-gray-200 '>No Review Added</h1>
                             </div>
                         </>
                 }
