@@ -21,7 +21,7 @@ const Services = () => {
     return (
         <div className=' dark:bg-gray-800 '> 
             <div className=''>
-                <div className="p-6  mt-5 dark:bg-violet-400 dark:text-gray-900">
+                <div className="p-6   dark:bg-violet-400 dark:text-gray-900">
                     <div className="container mx-auto">
                         <div className="flex flex-col lg:flex-row items-center justify-between">
                             <h2 className="text-center text-6xl tracking-tighter font-bold">Up to
@@ -43,14 +43,7 @@ const Services = () => {
                 <h2 className="text-center text-white text-6xl tracking-tighter font-bold">
                     Our Services
                 </h2>
-
-
-            </div>
-
-
-
-
-
+            </div> 
             <div className='grid lg:grid-cols-3 sm:grid-cols-1 gap-2 mb-20 justify-items-center'>
                 {
                     services.map(service =>

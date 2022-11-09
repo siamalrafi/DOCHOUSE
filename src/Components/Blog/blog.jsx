@@ -3,10 +3,10 @@ import React from 'react';
 const blog = () => {
     return (
         <div>
-            <section className="dark:text-gray-800 dark:bg-gray-300">
+            <section className=" bg-gray-300">
                 <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
                     <h2 className="text-2xl mb-8 font-semibold sm:text-4xl"><b className='text-black'>
-                        Our Blog are ready to you.
+                        Our blog are ready to you.
                     </b></h2>
 
                     <div className="space-y-4">

@@ -74,7 +74,7 @@ const Details = () => {
 
     return (
         <div>
-            <div className='grid justify-items-center my-5'>
+            <div className='grid  justify-items-center my-5'>
                 <div className="max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
                     <div>
                         <PhotoProvider>

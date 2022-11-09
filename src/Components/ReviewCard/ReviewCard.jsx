@@ -26,7 +26,7 @@ const ReviewCard = ({ myreivew, handleDelete }) => {
     return (
         <div>
 
-            <div className="mb-5 bg-gray-400 card w-72 bg-base-100 shadow-xl">
+            <div className="mb-5 bg-black text-white card w-72 bg-base-100 shadow-xl">
                 <figure><img src={serviceImg} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">

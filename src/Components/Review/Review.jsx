@@ -41,7 +41,7 @@ const Review = () => {
 
     return (
         <div>
-            <div className='mt-5 my-8 grid lg:grid-cols-3 sm:grid-cols-1 justify-items-center'>
+            <div className=' dark:bg-gray-600 pt-10  grid lg:grid-cols-3 sm:grid-cols-1 justify-items-center'>
                 {
                     myreivews.length !== 0 ?
                         <>
