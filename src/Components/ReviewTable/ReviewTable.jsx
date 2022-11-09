@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 
 const ReviewTable = ({ review }) => {
-    const { user } = useState(AuthContext)
+    const { user } = useState(AuthContext);
     const { rating, customarName, email, massage, photoURL, serviceId, } = review;
 
     return (
@@ -36,7 +36,7 @@ const ReviewTable = ({ review }) => {
                             <td>
                                 Overall Okay
                                 <br />
-                                <span className="badge badge-ghost badge-sm">{massage.slice(0, 50)}</span>
+                                <span className="badge badge-ghost badge-sm">{massage}</span>
                             </td>
                             <td className='ml-5'>Rating : {rating}</td>
                         </tr>

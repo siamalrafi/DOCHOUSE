@@ -39,6 +39,31 @@ const Review = () => {
         }
     };
 
+
+    const handleUpdate = (id) => {
+        fetch(`http://localhost:5000/myreviews/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify()
+        })
+            .then(res => res.json())
+            .then(data => {
+
+
+                console.log('object');
+            })
+
+
+
+
+    }
+
+
+
+
+
     return (
         <div>
             <div className=' dark:bg-gray-600 pt-10  grid lg:grid-cols-3 md:grid-cols-2 gap-3 sm:grid-cols-1 justify-items-center'>
@@ -50,6 +75,7 @@ const Review = () => {
                                     <ReviewCard
                                         key={myreivew._id}
                                         myreivew={myreivew}
+                                        handleUpdate={handleUpdate}
                                         handleDelete={handleDelete}
                                     >
                                     </ReviewCard>)

@@ -16,7 +16,7 @@ const Details = () => {
     const { user } = useContext(AuthContext);
     const details = useLoaderData();
     const [reviews, setReviews] = useState([]);
-    const { img, _id, name,  price, rating, description } = details;
+    const { img, _id, name, price, rating, description } = details;
 
 
     useEffect(() => {
@@ -63,6 +63,7 @@ const Details = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
+                    // setReviews([...review,])
                     notify();
                     form.reset();
                 }
