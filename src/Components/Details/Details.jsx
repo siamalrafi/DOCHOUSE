@@ -16,7 +16,7 @@ const Details = () => {
     const { user } = useContext(AuthContext);
     const details = useLoaderData();
     const [reviews, setReviews] = useState([]);
-    const { img, _id, name, price, rating, description } = details;
+    const { img, _id, name,  price, rating, description } = details;
 
 
     useEffect(() => {
@@ -89,10 +89,10 @@ const Details = () => {
 
                         <div className="space-x-2">
                             <button aria-label="Share this post" type="button" className="p-2 text-center">
-                                <FaShareAlt></FaShareAlt>
+                                <FaShareAlt className='text-orange-400'></FaShareAlt>
                             </button>
                             <button aria-label="Bookmark this post" type="button" className="p-2">
-                                <FaBookmark></FaBookmark>
+                                <FaBookmark className='text-orange-400'></FaBookmark>
                             </button>
                         </div>
                         <div>
@@ -100,12 +100,12 @@ const Details = () => {
                         </div>
                         <div className="flex space-x-2 text-sm dark:text-gray-400">
                             <button type="button" className="flex items-center p-1 space-x-1.5">
-                                <FaCommentDots className='text-xl text-white'></FaCommentDots>
-                                <span>{30}</span>
+                                <FaCommentDots className='text-xl text-orange-400'></FaCommentDots>
+                                <span>{300}</span>
                             </button>
                             <button type="button" className="flex items-center p-1 space-x-1.5">
-                                <FaStar className='text-xl text-white'></FaStar>
-                                <span>{rating}</span>
+                                <FaStar className='text-2xl text-orange-400'></FaStar>
+                                <span className='text-2xl'>{rating}</span>
                             </button>
                         </div>
 

@@ -58,7 +58,7 @@ const Review = () => {
                         :
                         <>
                             <div className='flex grid-cols-1'>
-                                <h1 className='p-10 h-96 w-full  font-bold text-3xl text-gray-500 '>No Review Added</h1>
+                                <h1 className='p-10 h-96 w-full  font-bold text-3xl text-gray-200 '>No Review Added</h1>
                             </div>
                         </>
                 }

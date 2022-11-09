@@ -3,9 +3,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const AddServices = () => {
     const notify = () => toast.success("Successfully Service Added!");
-
-
-
+    const notifyError = () => toast.error("An error in here, Please Try again!");
 
     const handleAddService = (event) => {
         event.preventDefault();
@@ -17,7 +15,6 @@ const AddServices = () => {
         const name = form.serviceName.value;
         const description = form.description.value;
         // console.log(img, price, rating, name, description);
-
 
         const addService = {
             img: img,
@@ -42,7 +39,10 @@ const AddServices = () => {
                 }
                 console.log(data);
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                notifyError();
+                console.log(error);
+            })
 
 
     };
@@ -55,7 +55,7 @@ const AddServices = () => {
         <div>
             <div className='bg-gray-500 w-full 	'>
                 <form onSubmit={handleAddService}>
-                    <h2 className="text-center text-black font-bold my-5 text-4xl">name</h2>
+                    <h2 className="text-center text-black font-bold my-5 text-4xl">Add Your Service</h2>
                     <div className='grid lg:grid-cols-2 sm:grid-cols-1 justify-items-center'>
                         <input name='serviceName'
                             type="text" placeholder="Type Service Name" className="mt-2 input input-bordered input-error w-full max-w-xs" required />
