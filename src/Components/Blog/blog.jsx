@@ -6,7 +6,7 @@ const blog = () => {
             {/* <section className=" bg-gray-300"> */}
             <section className=" dark:bg-gray-600">
                 <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
-                    <h2 className="text-2xl mb-8 font-semibold sm:text-4xl"><b className='text-black'>
+                    <h2 className="text-2xl mb-8 font-semibold sm:text-4xl"><b className='text-orange-100'>
                         Our blog are ready to you.
                     </b></h2>
 
@@ -16,27 +16,26 @@ const blog = () => {
                                 Difference between SQL and NoSQL ?
                             </b></summary>
                             <p className="px-4 py-6 pt-0 ml-4 -mt-4  text-white bg-black">
-                                SQL stands for ‘Structured Query Language’. It is the most common programming language used for executing queries, and handling data by using CRUD (create, read, update and delete) operation on a Relational Database Management System (RDMS).
+                                SQL stands for 'Structured Query Language'. It is the most common programming language used for executing queries, and handling data by using CRUD (create, read, update and delete) operation on a Relational Database Management System (RDMS).
                                 SQL databases are cross-platform, more secure, free, and open source with better and stronger community support.
                                 <br />  <br />
-
-                                NoSQL stands for ‘Not-Only SQL’. These types of databases are Non-Relational or non-tabular. A No-SQL database does not require a specific schema and hence is schema-less, and all the entries/documents are JSON documents. Examples − MongoDB, DynamoDB, Redis, etc.
+                                NoSQL stands for 'Not-Only SQL'. These types of databases are Non-Relational or non-tabular. A No-SQL database does not require a specific schema and hence is schema-less, and all the entries/documents are JSON documents. Examples − MongoDB, DynamoDB, Redis, etc.
                                 NoSQL databases are very flexible, easy to use, developer-friendly, and provide higher performance
                             </p>
                         </details>
                         <details className="w-full  border-purple-500  border rounded-lg">
-                            <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">
+                            <summary className="px-4 text-white py-6 focus:outline-none focus-visible:ring-violet-400">
                                 <b className='text-orange-200'>
                                     What is JWT, and how does it work?
                                 </b>
 
                             </summary>
                             <p className="px-4 py-6 pt-0 ml-4 -mt-4  text-white bg-black">
-                                JSON Web Token or JWT, as it is more commonly called, is an open Internet standard (RFC 7519) for securely transmitting trusted information between parties in a compact way. The tokens contain claims that are encoded as a JSON object and are digitally signed using a private secret or a public key/private key pair. They are self-contained and verifiable as they are digitally signed. JWT’s can be signed and/or encrypted. The signed tokens verify the integrity of the claims contained in the token, while the encrypted ones hide the claims from other parties.
+                                JSON Web Token or JWT, as it is more commonly called, is an open Internet standard (RFC 7519) for securely transmitting trusted information between parties in a compact way. The tokens contain claims that are encoded as a JSON object and are digitally signed using a private secret or a public key/private key pair. They are self-contained and verifiable as they are digitally signed. JWT's can be signed and/or encrypted. The signed tokens verify the integrity of the claims contained in the token, while the encrypted ones hide the claims from other parties.
                             </p>
                         </details>
                         <details className="w-full  border-purple-500  border rounded-lg">
-                            <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">
+                            <summary className="text-white px-4 py-6 focus:outline-none focus-visible:ring-violet-400">
                                 <b className='text-orange-200'>
 
                                     What is the difference between javascript and NodeJS ?
@@ -51,7 +50,7 @@ const blog = () => {
                             </p>
                         </details>
                         <details className="w-full  border-purple-500  border rounded-lg">
-                            <summary className="px-4 py-6 focus:outline-none focus-visible:ring-violet-400">
+                            <summary className="text-white px-4 py-6 focus:outline-none focus-visible:ring-violet-400">
                                 <b className='text-orange-200'>
                                     How does NodeJS handle multiple requests at the same time  ?
                                 </b>
@@ -64,8 +63,8 @@ const blog = () => {
                         </details>
                     </div>
                 </div>
-            </section>
-        </div>
+            </section >
+        </div >
     );
 };
 

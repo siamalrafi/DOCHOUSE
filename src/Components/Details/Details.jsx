@@ -112,7 +112,7 @@ const Details = () => {
                     </div>
                 </div>
                 <hr />
-                <h1 className="text-3xl  bg-red-400 my-5 p-5 px-5 rounded">Some Reivew</h1>
+                <h1 className="text-3xl  text-black font-semibold bg-red-400 my-5 p-5 px-5 rounded">Some Reivew</h1>
 
                 <div>
                     {
@@ -120,20 +120,18 @@ const Details = () => {
                             review={review}
                             key={review._id}
                         >
-
                         </ReviewTable>)
                     }
-
                 </div>
 
 
 
-                <h1 className="text-3xl bg-green-500 my-10">Your Review</h1>
+                <h1 className="text-3xl text-black font-semibold bg-red-400 my-5 p-5 px-5 rounded">Add Reivew</h1>
 
                 <div className='bg-gray-500 w-full 	'>
                     <form onSubmit={handleReview}>
-                        <h2 className="text-center my-5 text-4xl">{name}</h2>
-                        <div className='grid justify-items-center'>
+                        <h2 className="text-center text-black font-bold my-5 text-4xl">{name}</h2>
+                        <div className='grid lg:grid-cols-2 sm:grid-cols-1 justify-items-center'>
                             <input defaultValue={user?.displayName} type="text" placeholder="Type Your Name" className="mt-2 input input-bordered input-error w-full max-w-xs" />
                             <input defaultValue={user?.email} type="text" placeholder="Type Your Email" className="mt-2 input input-bordered input-error w-full max-w-xs" />
                             <input defaultValue={user?.photoURL} type="text" placeholder="Type Your PhotoURL" className="mt-2 input input-bordered input-error w-full max-w-xs" />
@@ -144,7 +142,6 @@ const Details = () => {
                         </div>
                         <textarea name='massage' required className="textarea w-full mt-3 textarea-secondary" placeholder="Type Your Massage..."></textarea>
                         <div className='text-center py-5'>
-
                             {
                                 user?.uid ?
                                     <>

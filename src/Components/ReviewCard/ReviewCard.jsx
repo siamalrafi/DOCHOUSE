@@ -1,33 +1,26 @@
 import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
 
 
 const ReviewCard = ({ myreivew, handleDelete }) => {
     const notify = () => toast.success("Successfully Deleted!");
     const { customarName, massage, _id, serviceImg, serviceName, rating } = myreivew;
 
-    /*  const handleDelete = (_id) => {
-         const agree = window.confirm('Are you sure you ?');
-         if (agree) {
-             fetch(`http://localhost:5000/myreviews/${_id}`, {
-                 method: 'DELETE'
-             })
-                 .then(res => res.json())
-                 .then(data => {
-                     notify();
-                     console.log(data)
-                 })
-         }
-     }; */
-
     return (
         <div>
 
             <div className="mb-5 bg-black text-white card w-72 bg-base-100 shadow-xl">
-                <figure><img src={serviceImg} alt="Shoes" /></figure>
+                <PhotoProvider>
+                    <PhotoView className='w-80 h-full' src={serviceImg}>
+                        <img src={serviceImg} alt="serviceImg" />
+                    </PhotoView>
+                </PhotoProvider>
+
+
+
                 <div className="card-body">
                     <h2 className="card-title">
                         {serviceName}

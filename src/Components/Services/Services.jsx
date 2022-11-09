@@ -29,7 +29,8 @@ const Services = () => {
                             </h2>
                             <div className="space-x-2 text-center py-2 lg:py-0">
                                 <span> Use code:</span>
-                                <span className="font-bold text-lg">MAMBA</span>
+                                <span className="font-bold text-lg">DOCHOUSE
+</span>
                             </div>
                             <Link to="" rel="noreferrer noopener" className="px-5 mt-4 lg:mt-0 py-3 rounded-md border block dark:bg-gray-50 dark:text-gray-900 dark:border-gray-400">Book Now</Link>
                         </div>
@@ -41,7 +42,7 @@ const Services = () => {
             <div>
 
                 <h2 className="text-center text-white text-6xl tracking-tighter font-bold">
-                    Our Services
+                    My Services
                 </h2>
             </div>
             <div className='grid lg:grid-cols-3 sm:grid-cols-1 gap-2 pb-20 justify-items-center'>

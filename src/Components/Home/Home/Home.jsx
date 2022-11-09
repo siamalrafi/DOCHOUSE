@@ -76,11 +76,8 @@ const Home = () => {
                         <Card
                             service={service}
                             key={service._id}
-
                         >
-
                         </Card>)
-
                 }
             </div>
 
