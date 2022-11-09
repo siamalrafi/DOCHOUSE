@@ -12,23 +12,26 @@ const ReviewCard = ({ myreivew, handleDelete }) => {
     return (
         <div>
 
-            <div className="mb-5 bg-black text-white card w-72 bg-base-100 shadow-xl">
+            <div className="mb-5 dark:bg-indigo-900 text-gray-200 card w-72 bg-base-100 shadow-xl">
+
                 <PhotoProvider>
                     <PhotoView className='w-80 h-full' src={serviceImg}>
                         <img src={serviceImg} alt="serviceImg" />
                     </PhotoView>
                 </PhotoProvider>
-
-
+                
 
                 <div className="card-body">
                     <h2 className="card-title">
                         {serviceName}
                         <div className="badge  ">
                             <span>
-                                <FaStar className='text-orange-400'></FaStar>
+                                <FaStar className='text-2xl text-orange-400'></FaStar>
                             </span>
-                            {rating}</div>
+                            <span className='text-2xl'>
+                                {rating}
+                            </span>
+                        </div>
                     </h2>
                     <p>{massage.slice(0, 100)}</p>
                     <div className="card-actions justify-end">
