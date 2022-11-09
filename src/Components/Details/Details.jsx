@@ -124,7 +124,7 @@ const Details = () => {
 
                 <h1 className="text-3xl bg-green-500 my-10">Your Review</h1>
 
-                <div className='bg-gray-500 w-full'>
+                <div className='bg-gray-500 w-full 	'>
                     <form onSubmit={handleReview}>
                         <h2 className="text-center my-5 text-4xl">{name}</h2>
                         <div className='grid justify-items-center'>

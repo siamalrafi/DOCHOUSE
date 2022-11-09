@@ -1,17 +1,28 @@
-import React from 'react';
+import userEvent from '@testing-library/user-event';
+import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 
 const ReviewTable = ({ review }) => {
+    const notify = () => toast.success("Successfully Deleted!");
+    const { user } = useState(AuthContext)
     const { _id, name, email, massage, photoURL, serviceId, } = review;
 
 
-    const handleDelete = (_id) => {
-        const agree = window.confirm('Are you sure you ?');
-        if (agree) {
-
-
-
-        }
-    };
+    // const handleDelete = (_id) => {
+    //     const agree = window.confirm('Are you sure you ?');
+    //     if (agree) {
+    //         fetch(`http://localhost:5000/reviews/${_id}`, {
+    //             method: 'DELETE'
+    //         })
+    //             .then(res => res.json())
+    //             .then(data => {
+    //                 notify();
+    //                 console.log(data)
+    //             })
+    //     }
+    // };
 
 
     return (
@@ -20,21 +31,15 @@ const ReviewTable = ({ review }) => {
                 <table className="table w-full">
 
                     <thead>
-                        <tr>
-                            <th> </th>
+                        <tr className='flex justify-around'>
                             <th>Identity</th>
                             <th>Review</th>
-                            <th>Favorite</th>
-                            <th></th>
+                            <th className='mr-[-30px]'>Favorite</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th>
-                                <button
-                                    onClick={() => handleDelete(_id)}
-                                    className="btn btn-sm btn-primary">Delete</button>
-                            </th>
+                        <tr className='flex justify-items-center justify-between'>
+
                             <td>
                                 <div className="flex items-center space-x-3">
                                     <div className="avatar">
@@ -54,11 +59,13 @@ const ReviewTable = ({ review }) => {
                                 <span className="badge badge-ghost badge-sm">{massage.slice(0, 50)}</span>
                             </td>
                             <td>Good</td>
-                            <th>
-                                <button className="btn  btn-sm btn-primary">Edit</button>
-                            </th>
+
+
+
                         </tr>
                     </tbody>
+
+
 
                 </table>
             </div>
