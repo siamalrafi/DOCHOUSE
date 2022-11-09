@@ -39,20 +39,28 @@ const Review = () => {
         }
     };
 
-
     return (
         <div>
             <div className='mt-5 my-8 grid lg:grid-cols-3 sm:grid-cols-1 justify-items-center'>
-
                 {
-                    myreivews.map(myreivew =>
-                        <ReviewCard
-                            key={myreivew._id}
-                            myreivew={myreivew}
-                            handleDelete={handleDelete}
-                        >
-
-                        </ReviewCard>)
+                    myreivews.length !== 0 ?
+                        <>
+                            {
+                                myreivews.map(myreivew =>
+                                    <ReviewCard
+                                        key={myreivew._id}
+                                        myreivew={myreivew}
+                                        handleDelete={handleDelete}
+                                    >
+                                    </ReviewCard>)
+                            }
+                        </>
+                        :
+                        <>
+                            <div className='flex grid-cols-1'>
+                                <h1 className='p-10 h-96 w-full  font-bold text-3xl text-gray-500 '>No Review Added</h1>
+                            </div>
+                        </>
                 }
             </div>
         </div>
