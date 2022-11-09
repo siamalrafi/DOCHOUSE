@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { FaStar } from 'react-icons/fa';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 
 const ReviewTable = ({ review }) => {
     const { user } = useState(AuthContext)
     const { rating, customarName, email, massage, photoURL, serviceId, } = review;
 
-    console.log(rating);
     return (
         <div>
             <div className="overflow-x-auto w-full">

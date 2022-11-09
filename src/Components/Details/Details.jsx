@@ -17,7 +17,7 @@ const Details = () => {
     const details = useLoaderData();
     const [reviews, setReviews] = useState([]);
     const { img, _id, name, price, rating, description } = details;
- 
+
 
     useEffect(() => {
         fetch(`http://localhost:5000/reviews?serviceId=${_id}`)
@@ -111,8 +111,8 @@ const Details = () => {
 
                     </div>
                 </div>
-
-                <h1 className="text-3xl bg-red-400 my-5 rounded">Some Reivew</h1>
+                <hr />
+                <h1 className="text-3xl  bg-red-400 my-5 p-5 px-5 rounded">Some Reivew</h1>
 
                 <div>
                     {
