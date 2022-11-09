@@ -21,14 +21,18 @@ const Review = () => {
 
 
 
-    const handleDelete = (_id) => {
+    const handleDelete = (id) => {
         const agree = window.confirm('Are you sure you ?');
         if (agree) {
-            fetch(`http://localhost:5000/myreviews/${_id}`, {
+            fetch(`http://localhost:5000/myreviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
                 .then(data => {
+                    if (data.deletedCount > 0) {
+                        const remaingReview = myreivews.filter(rev => rev._id !== id)
+                        setMyReviews(remaingReview)
+                    }
                     notify();
                     console.log(data)
                 })
