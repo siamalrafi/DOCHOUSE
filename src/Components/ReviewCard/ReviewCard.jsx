@@ -1,28 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 
-const ReviewCard = ({ myreivew }) => {
+const ReviewCard = ({ myreivew, handleDelete }) => {
     const notify = () => toast.success("Successfully Deleted!");
     const { customarName, massage, _id, serviceImg, serviceName, rating } = myreivew;
 
-    const handleDelete = (_id) => {
-        const agree = window.confirm('Are you sure you ?');
-        if (agree) {
-            fetch(`http://localhost:5000/myreviews/${_id}`, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    notify();
-                    console.log(data)
-                })
-        }
-    };
-
+    /*  const handleDelete = (_id) => {
+         const agree = window.confirm('Are you sure you ?');
+         if (agree) {
+             fetch(`http://localhost:5000/myreviews/${_id}`, {
+                 method: 'DELETE'
+             })
+                 .then(res => res.json())
+                 .then(data => {
+                     notify();
+                     console.log(data)
+                 })
+         }
+     }; */
 
     return (
         <div>
