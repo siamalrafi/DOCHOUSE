@@ -7,7 +7,7 @@ import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 const ReviewTable = ({ review }) => {
     const notify = () => toast.success("Successfully Deleted!");
     const { user } = useState(AuthContext)
-    const { _id, name, email, massage, photoURL, serviceId, } = review;
+    const { _id, customarName, email, massage, photoURL, serviceId, } = review;
 
 
     // const handleDelete = (_id) => {
@@ -48,7 +48,7 @@ const ReviewTable = ({ review }) => {
                                         </div>
                                     </div>
                                     <div>
-                                        <div className="font-bold">{name}</div>
+                                        <div className="font-bold">{customarName}</div>
                                         <div className="text-sm opacity-50">{email}</div>
                                     </div>
                                 </div>

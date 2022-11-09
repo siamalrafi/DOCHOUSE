@@ -6,7 +6,8 @@ import Login from "../Components/Login/Login";
 import SignUp from '../Components/SignUp/SignUp';
 import Services from '../Components/Services/Services';
 import Details from "../Components/Details/Details";
-import { faTeeth } from "@fortawesome/free-solid-svg-icons";
+import Review from "../Components/Review/Review";
+import Blog from '../Components/Blog/blog';
 
 
 const router = createBrowserRouter([
@@ -23,10 +24,19 @@ const router = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>
-            }, {
+            },
+            {
                 path: '/services/:id',
                 element: <Details></Details>,
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+            },
+            {
+                path: '/review',
+                element: <Review></Review>
+            },
+            {
+                path:"/blog",
+                element:<Blog></Blog>
             },
             {
                 path: '/login',

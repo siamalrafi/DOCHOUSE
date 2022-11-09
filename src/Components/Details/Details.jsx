@@ -32,19 +32,23 @@ const Details = () => {
     const handleReview = (event) => {
         event.preventDefault();
         const form = event.target;
-        const name = user?.displayName;
+        const userName = user?.displayName;
         const email = user?.email;
         const serviceId = _id;
         const photoURL = user?.photoURL;
+        const rating = form.rating.value;
+        const serviceName = name;
         const massage = form.massage.value;
         // console.log(name, email, serviceId, photoURL, massage);
 
         const review = {
-            name,
+            customarName: userName,
             email,
             serviceId,
             photoURL,
+            rating,
             massage,
+            serviceName: name,
         };
 
         fetch(`http://localhost:5000/reviews`, {
@@ -116,9 +120,9 @@ const Details = () => {
                         >
 
                         </ReviewTable>)
-                    } 
+                    }
 
-                </div> 
+                </div>
 
 
 
@@ -131,7 +135,9 @@ const Details = () => {
                             <input defaultValue={user?.displayName} type="text" placeholder="Type Your Name" className="mt-2 input input-bordered input-error w-full max-w-xs" />
                             <input defaultValue={user?.email} type="text" placeholder="Type Your Email" className="mt-2 input input-bordered input-error w-full max-w-xs" />
                             <input defaultValue={user?.photoURL} type="text" placeholder="Type Your PhotoURL" className="mt-2 input input-bordered input-error w-full max-w-xs" />
-                            <input defaultValue={_id} type="text" placeholder="Type here" className="mt-2 input input-bordered input-error w-full max-w-xs" />
+                            <input defaultValue={name} type="text" placeholder="Service name" className="mt-2 input input-bordered input-error w-full max-w-xs" />
+                            <input defaultValue={_id} type="text" placeholder="Service name" className="mt-2 input input-bordered input-error w-full max-w-xs" />
+                            <input name='rating' type="number" placeholder="Give me Rating" className="mt-2 input input-bordered input-error w-full max-w-xs" />
                         </div>
                         <textarea name='massage' className="textarea w-full mt-3 textarea-secondary" placeholder="Type Your Massage..."></textarea>
                         <div className='text-center py-5'>
@@ -143,7 +149,7 @@ const Details = () => {
                                     </>
                                     :
                                     <>
-                                        <Link to={'/login'} className='btn text-center btn-active btn-success'>Please Login First </Link>
+                                        <Link to={'/login'} className='btn text-center btn-active btn-warning'>Please Login First </Link>
                                     </>
                             }
 

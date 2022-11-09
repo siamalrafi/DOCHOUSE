@@ -38,22 +38,22 @@ const Navbar = () => {
 
                             <li>
                                 <Link
-                                    to="/"
+                                    to="/review"
                                     aria-label="Our product"
                                     title="Our product"
                                     className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                                 >
-                                    Features
+                                    My reviews
                                 </Link>
                             </li>
                             <li>
                                 <Link
-                                    to="/"
+                                    to="/blog"
                                     aria-label="Product pricing"
                                     title="Product pricing"
                                     className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
                                 >
-                                    Pricing
+                                    Blog
                                 </Link>
                             </li>
                             <li>
@@ -167,22 +167,22 @@ const Navbar = () => {
                                             </li>
                                             <li>
                                                 <Link
-                                                    to="/"
+                                                    to="/review"
                                                     aria-label="Our product"
                                                     title="Our product"
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                                 >
-                                                    Features
+                                                    My reviews
                                                 </Link>
                                             </li>
                                             <li>
                                                 <Link
-                                                    to="/"
+                                                    to="/blog"
                                                     aria-label="Product pricing"
                                                     title="Product pricing"
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                                                 >
-                                                    Pricing
+                                                    Blog
                                                 </Link>
                                             </li>
                                             <li>
