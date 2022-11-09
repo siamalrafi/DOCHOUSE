@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -59,7 +60,7 @@ const Login = () => {
         <div className='grid justify-items-center my-5 '>
 
             <div className="w-full max-w-md p-8 rounded-xl dark:bg-gray-900 dark:text-gray-100">
-                <h1 className="text-2xl font-bold text-center">Login</h1>
+                <h1 className="text-2xl font-bold text-center">Sign in</h1>
                 <form
                     onSubmit={handleSignIn}
 
@@ -82,7 +83,7 @@ const Login = () => {
 
                 <div className="flex items-center pt-4 space-x-1">
                     <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
-                    <p className="px-3 text-sm dark:text-gray-400">Login with social accounts</p>
+                    <p className="px-3 text-sm dark:text-gray-400">Sign in with social accounts</p>
                     <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
                 </div>
                 <div className="flex justify-center ">
@@ -97,7 +98,9 @@ const Login = () => {
                     <Link rel="noopener noreferrer" to='/signup' className="underline text-green-400 text-xl m-5">Sign up</Link>
                 </p>
             </div>
-
+            <Helmet>
+                <title>Sign in  </title>
+            </Helmet>
         </div>
     );
 };

@@ -6,7 +6,9 @@ import Card from './Card/Card';
 const Services = () => {
     const [services, setServices] = useState([]);
 
+
     useEffect(() => {
+        document.title = ("Services")
         fetch('http://localhost:5000/services')
             .then(res => res.json())
             .then(data => {

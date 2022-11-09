@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { ToastContainer, toast } from 'react-toastify';
 
 const AddServices = () => {
@@ -50,9 +51,12 @@ const AddServices = () => {
 
 
 
-
     return (
         <div>
+
+            <Helmet>
+                <title>Add Service</title>
+            </Helmet>
             <div className='bg-gray-500 w-full 	'>
                 <form onSubmit={handleAddService}>
                     <h2 className="text-center text-black font-bold my-5 text-4xl">Add Your Service</h2>

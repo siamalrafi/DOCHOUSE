@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import Card from '../../Services/Card/Card';
@@ -10,6 +11,7 @@ const Home = () => {
 
     return (
         <div>
+
             <div className="bg-indigo-900">
                 <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
                     <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
@@ -154,7 +156,9 @@ const Home = () => {
 
 
 
-
+            <Helmet>
+                <title>DOCHOUSE </title>
+            </Helmet>
         </div>
     );
 };

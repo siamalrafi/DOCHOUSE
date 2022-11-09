@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -17,7 +18,7 @@ const SignUp = () => {
 
     const handleSignUp = (event) => {
         event.preventDefault();
-        
+
         const form = event.target
         const name = form.name.value;
         const photoURI = form.photoURL.value;
@@ -27,7 +28,7 @@ const SignUp = () => {
         createUser(email, password)
             .then((result) => {
                 const user = result.user;
-                nameUpdate(name,photoURI);
+                nameUpdate(name, photoURI);
                 notify();
                 console.log(user);
             })
@@ -108,6 +109,9 @@ const SignUp = () => {
                 </div>
                 <ToastContainer position="top-center" />
             </div>
+            <Helmet>
+                <title>Sign Up  </title>
+            </Helmet>
         </div>
     );
 };

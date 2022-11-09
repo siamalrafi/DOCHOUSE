@@ -3,14 +3,18 @@ import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import ReviewCard from '../ReviewCard/ReviewCard';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet';
 
 
 const Review = () => {
     const notify = () => toast.success("Successfully Deleted!");
+    const notifyUpdate = () => toast.success("Successfully Updated!");
+
     const { user } = useContext(AuthContext);
     const [myreivews, setMyReviews] = useState([]);
 
     useEffect(() => {
+
         fetch(`http://localhost:5000/myreviews?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
@@ -40,29 +44,6 @@ const Review = () => {
     };
 
 
-    const handleUpdate = (id) => {
-        fetch(`http://localhost:5000/myreviews/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify()
-        })
-            .then(res => res.json())
-            .then(data => {
-
-
-                console.log('object');
-            })
-
-
-
-
-    }
-
-
-
-
 
     return (
         <div>
@@ -75,7 +56,6 @@ const Review = () => {
                                     <ReviewCard
                                         key={myreivew._id}
                                         myreivew={myreivew}
-                                        handleUpdate={handleUpdate}
                                         handleDelete={handleDelete}
                                     >
                                     </ReviewCard>)
@@ -89,6 +69,9 @@ const Review = () => {
                         </>
                 }
             </div>
+            <Helmet>
+                <title>My reviews</title>
+            </Helmet>
         </div>
     );
 };

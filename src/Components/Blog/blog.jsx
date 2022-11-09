@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 const blog = () => {
+
+
+
+
     return (
         <div>
+            <Helmet>
+                <title>Blog</title>
+            </Helmet>
             {/* <section className=" bg-gray-300"> */}
             <section className=" dark:bg-gray-600">
                 <div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">

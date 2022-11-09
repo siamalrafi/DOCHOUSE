@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -10,7 +11,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 const Card = ({ service }) => {
 
     const { img, _id, name, price, rating, description } = service;
-    
+
 
     return (
         <div>
@@ -37,6 +38,8 @@ const Card = ({ service }) => {
                     </div>
                 </div>
             </div>
+
+     
         </div>
     );
 };

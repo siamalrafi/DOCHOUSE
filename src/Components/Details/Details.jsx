@@ -7,6 +7,7 @@ import 'react-photo-view/dist/react-photo-view.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ReviewTable from '../ReviewTable/ReviewTable';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -75,6 +76,7 @@ const Details = () => {
 
     return (
         <div>
+
             <div className='grid  justify-items-center my-5'>
                 <div className="max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md dark:bg-gray-900 dark:text-gray-100">
                     <div>
@@ -160,6 +162,9 @@ const Details = () => {
 
                 </div>
             </div>
+            <Helmet>
+                <title>{name}</title>
+            </Helmet>
         </div >
     );
 };
