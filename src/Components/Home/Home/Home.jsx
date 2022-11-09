@@ -70,7 +70,7 @@ const Home = () => {
 
 
 
-            <div className='grid lg:grid-cols-3 sm:grid-cols-1 justify-items-center bg-blue-100'>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 justify-items-center bg-blue-100'>
                 {
                     services.map(service =>
                         <Card
