@@ -38,6 +38,7 @@ const Details = () => {
         const photoURL = user?.photoURL;
         const rating = form.rating.value;
         const serviceName = name;
+        const serviceImg = img;
         const massage = form.massage.value;
         // console.log(name, email, serviceId, photoURL, massage);
 
@@ -49,6 +50,7 @@ const Details = () => {
             rating,
             massage,
             serviceName: name,
+            serviceImg: img,
         };
 
         fetch(`http://localhost:5000/reviews`, {
@@ -136,7 +138,8 @@ const Details = () => {
                             <input defaultValue={user?.email} type="text" placeholder="Type Your Email" className="mt-2 input input-bordered input-error w-full max-w-xs" />
                             <input defaultValue={user?.photoURL} type="text" placeholder="Type Your PhotoURL" className="mt-2 input input-bordered input-error w-full max-w-xs" />
                             <input defaultValue={name} type="text" placeholder="Service name" className="mt-2 input input-bordered input-error w-full max-w-xs" />
-                            <input defaultValue={_id} type="text" placeholder="Service name" className="mt-2 input input-bordered input-error w-full max-w-xs" />
+                            <input defaultValue={_id} type="text" placeholder="Service id" className="mt-2 input input-bordered input-error w-full max-w-xs" />
+                            <input defaultValue={img} type="website" placeholder="Service img" className="mt-2 input input-bordered input-error w-full max-w-xs" />
                             <input name='rating' type="number" placeholder="Give me Rating" className="mt-2 input input-bordered input-error w-full max-w-xs" />
                         </div>
                         <textarea name='massage' className="textarea w-full mt-3 textarea-secondary" placeholder="Type Your Massage..."></textarea>

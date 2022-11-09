@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
+import ReviewCard from '../ReviewCard/ReviewCard';
 
 const Review = () => {
     const { user } = useContext(AuthContext);
@@ -15,29 +16,22 @@ const Review = () => {
     }, [user?.email]);
 
 
-    console.log(myreivews);
-
 
 
     return (
         <div>
-            <div className='grid lg:grid-cols-3 sm:grid-cols-1 justify-items-center'>
-                <div className="card w-72 bg-base-100 shadow-xl">
-                    <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-                    <div className="card-body">
-                        <h2 className="card-title">
-                            Shoes!
-                            <div className="badge badge-secondary">NEW</div>
-                        </h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
-                        <div className="card-actions justify-end">
-                            <div className="badge badge-outline">Fashion</div>
-                            <div className="badge badge-outline">Products</div>
-                        </div>
-                    </div>
-                </div>
+            <div className='mt-5 my-8 grid lg:grid-cols-3 sm:grid-cols-1 justify-items-center'>
+              
+                    {
+                        myreivews.map(myreivew =>
+                            <ReviewCard
+                                key={myreivew._id}
+                                myreivew={myreivew}
+                            >
 
 
+                            </ReviewCard>)
+                    } 
             </div>
         </div>
     );
