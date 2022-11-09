@@ -19,7 +19,7 @@ const Services = () => {
 
 
     return (
-        <div className=' dark:bg-gray-800 '> 
+        <div className=' dark:bg-gray-600 '>
             <div className=''>
                 <div className="p-6   dark:bg-violet-400 dark:text-gray-900">
                     <div className="container mx-auto">
@@ -43,8 +43,8 @@ const Services = () => {
                 <h2 className="text-center text-white text-6xl tracking-tighter font-bold">
                     Our Services
                 </h2>
-            </div> 
-            <div className='grid lg:grid-cols-3 sm:grid-cols-1 gap-2 mb-20 justify-items-center'>
+            </div>
+            <div className='grid lg:grid-cols-3 sm:grid-cols-1 gap-2 pb-20 justify-items-center'>
                 {
                     services.map(service =>
                         <Card
