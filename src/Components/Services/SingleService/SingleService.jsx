@@ -1,9 +1,12 @@
 import React from 'react';
 
-const SingleService = () => {
+const SingleService = ({ myreivew }) => {
+    console.log(myreivew);
+
+
     return (
         <div>
-            
+            <h1>myreivewmyreivewmyreivewmyreivew</h1>
         </div>
     );
 };

@@ -4,6 +4,7 @@ import ReviewCard from '../ReviewCard/ReviewCard';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from 'react-helmet';
+import SingleService from '../Services/SingleService/SingleService';
 
 
 const Review = () => {
@@ -13,8 +14,8 @@ const Review = () => {
     const { user, logOut } = useContext(AuthContext);
     const [myreivews, setMyReviews] = useState([]);
 
-    useEffect(() => {
 
+    useEffect(() => {
         fetch(`http://localhost:5000/myreviews?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('access_token')}`
@@ -28,7 +29,7 @@ const Review = () => {
             })
             .then(data => {
                 setMyReviews(data)
-                console.log('revices', data)
+
             })
 
 
@@ -53,11 +54,16 @@ const Review = () => {
         }
     };
 
+    // console.log(myreivews);
 
 
     return (
         <div>
             <div className=' dark:bg-gray-600 pt-10  grid lg:grid-cols-3 md:grid-cols-2 gap-3 sm:grid-cols-1 justify-items-center'>
+
+
+
+
                 {
                     myreivews.length !== 0 ?
                         <>
@@ -78,6 +84,8 @@ const Review = () => {
                             </div>
                         </>
                 }
+                
+
             </div>
             <Helmet>
                 <title>My reviews</title>

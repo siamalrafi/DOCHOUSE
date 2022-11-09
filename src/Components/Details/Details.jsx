@@ -86,7 +86,7 @@ const Details = () => {
                             </PhotoView>
                         </PhotoProvider>
                         <h2 className="mb-1 text-xl font-semibold">{name}</h2>
-                        <p className="text-sm dark:text-gray-400"> {description}</p>
+                        <p className="text-sm dark:text-gray-400"> {description?.slice(0, 10)}</p>
                     </div>
                     <div className="flex flex-wrap justify-between">
 

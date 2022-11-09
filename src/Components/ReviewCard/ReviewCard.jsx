@@ -11,7 +11,11 @@ const ReviewCard = ({ myreivew, handleUpdate, handleDelete }) => {
     const notifyUpdate = () => toast.success("Successfully Updated!");
     const { customarName, massage, _id, serviceImg, serviceName, rating } = myreivew;
 
+ 
     const handleUpdateInput = (event) => {
+     
+
+
         event.preventDefault();
         const form = event.target;
         const rating = form.rating.value;
