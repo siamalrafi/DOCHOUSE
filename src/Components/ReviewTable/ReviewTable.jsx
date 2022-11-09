@@ -10,19 +10,7 @@ const ReviewTable = ({ review }) => {
     const { _id, customarName, email, massage, photoURL, serviceId, } = review;
 
 
-    // const handleDelete = (_id) => {
-    //     const agree = window.confirm('Are you sure you ?');
-    //     if (agree) {
-    //         fetch(`http://localhost:5000/reviews/${_id}`, {
-    //             method: 'DELETE'
-    //         })
-    //             .then(res => res.json())
-    //             .then(data => {
-    //                 notify();
-    //                 console.log(data)
-    //             })
-    //     }
-    // };
+
 
 
     return (
@@ -58,15 +46,9 @@ const ReviewTable = ({ review }) => {
                                 <br />
                                 <span className="badge badge-ghost badge-sm">{massage.slice(0, 50)}</span>
                             </td>
-                            <td>Good</td>
-
-
-
+                            <td>Good</td> 
                         </tr>
-                    </tbody>
-
-
-
+                    </tbody> 
                 </table>
             </div>
         </div>

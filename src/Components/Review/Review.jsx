@@ -16,8 +16,6 @@ const Review = () => {
     }, [user?.email]);
 
 
-
-
     return (
         <div>
             <div className='mt-5 my-8 grid lg:grid-cols-3 sm:grid-cols-1 justify-items-center'>
