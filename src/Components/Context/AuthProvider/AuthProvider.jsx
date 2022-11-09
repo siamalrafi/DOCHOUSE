@@ -31,8 +31,6 @@ const AuthProvider = ({ children }) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
 
-
-
     const googleSignIn = () => {
         setLoading(true)
         return signInWithPopup(auth, googelProvider)
@@ -43,14 +41,10 @@ const AuthProvider = ({ children }) => {
     }
 
 
-
-
-
-
     useEffect(() => {
         const unsubscibe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
-            setLoading(false)
+            setLoading(false);
         })
         return () => {
             unsubscibe();
@@ -65,7 +59,7 @@ const AuthProvider = ({ children }) => {
         nameUpdate,
         googleSignIn,
         signIn,
-        logOut
+        logOut,
 
 
     }

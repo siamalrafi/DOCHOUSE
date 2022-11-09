@@ -38,7 +38,7 @@ const Navbar = () => {
 
                             <li>
                                 <Link
-                                    to="/review"
+                                    to="/myreviews"
                                     aria-label="Our product"
                                     title="Our product"
                                     className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
@@ -167,7 +167,7 @@ const Navbar = () => {
                                             </li>
                                             <li>
                                                 <Link
-                                                    to="/review"
+                                                    to="/myreviews"
                                                     aria-label="Our product"
                                                     title="Our product"
                                                     className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
