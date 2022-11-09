@@ -1,16 +1,10 @@
 import userEvent from '@testing-library/user-event';
 import React, { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 
 const ReviewTable = ({ review }) => {
-    const notify = () => toast.success("Successfully Deleted!");
     const { user } = useState(AuthContext)
     const { _id, customarName, email, massage, photoURL, serviceId, } = review;
-
-
-
 
 
     return (
@@ -46,9 +40,9 @@ const ReviewTable = ({ review }) => {
                                 <br />
                                 <span className="badge badge-ghost badge-sm">{massage.slice(0, 50)}</span>
                             </td>
-                            <td>Good</td> 
+                            <td>Good</td>
                         </tr>
-                    </tbody> 
+                    </tbody>
                 </table>
             </div>
         </div>

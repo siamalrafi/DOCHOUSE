@@ -42,7 +42,7 @@ const ReviewCard = ({ myreivew }) => {
                     <div className="card-actions justify-end">
                         <button
                             onClick={() => handleDelete(_id)}
-                            className="badge">Delete</button>
+                            className="bg-red-800 text-white p-4 badge">Delete</button>
                         <button className="badge">Edit</button>
                     </div>
                 </div>
