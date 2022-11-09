@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -11,6 +11,12 @@ import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
     const { googleSignIn, signIn } = useContext(AuthContext);
     const notify = () => toast.success("Successfully Login !");
+    const notifyError = () => toast.error("An error in here Please, Try again!");
+    const navigate = useNavigate();
+
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
 
     const handleSignIn = (event) => {
         event.preventDefault();
@@ -24,8 +30,10 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 notify()
+                navigate(from, { replace: true });
             })
             .catch((error) => {
+                notifyError()
                 console.log(error);
             });
     };
@@ -36,8 +44,10 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 notify()
+                navigate(from, { replace: true });
             })
             .catch((error) => {
+                notifyError()
                 console.log(error);
             });
 
@@ -47,8 +57,6 @@ const Login = () => {
 
     return (
         <div className='grid justify-items-center my-5 '>
-            {/* <button onClick={notify}>Notify !</button>
-            <ToastContainer position="top-center" /> */}
 
             <div className="w-full max-w-md p-8 rounded-xl dark:bg-gray-900 dark:text-gray-100">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
@@ -58,7 +66,7 @@ const Login = () => {
                     className="space-y-6 ng-untouched ng-pristine ng-valid">
                     <div className="space-y-1 text-sm">
                         <label htmlFor="email" className="block dark:text-gray-400">Email</label>
-                        <input type="email" name="email" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                        <input type="email" name="email" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-vioconst-400" />
                     </div>
                     <div className="space-y-1 text-sm">
                         <label htmlFor="password" className="block dark:text-gray-400">Password</label>

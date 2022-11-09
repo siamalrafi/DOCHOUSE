@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
     const notify = () => toast.success("Successfully Sign Up !");
+    const notifyError = () => toast.error("An error in here Please, Try again!");
     const { createUser, nameUpdate, googleSignIn } = useContext(AuthContext);
 
     const handleSignUp = (event) => {
@@ -31,6 +32,7 @@ const SignUp = () => {
                 console.log(user);
             })
             .catch((error) => {
+                notifyError()
                 console.log(error);
             });
     };
@@ -44,6 +46,7 @@ const SignUp = () => {
                 notify();
             })
             .catch((error) => {
+                notifyError()
                 console.log(error);
             });
 
