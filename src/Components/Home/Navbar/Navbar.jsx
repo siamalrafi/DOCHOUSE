@@ -35,7 +35,6 @@ const Navbar = () => {
                                     Services
                                 </Link>
                             </li>
-
                             <li>
                                 <Link
                                     to="/myreviews"
@@ -101,8 +100,6 @@ const Navbar = () => {
                                             Sign up
                                         </Link>
                                     </li>
-
-
                                 </>
                         }
                         <li>
@@ -122,7 +119,6 @@ const Navbar = () => {
                             onClick={() => setIsMenuOpen(true)}
                         >
                             <span className='text-5xl ml-3'><FaBars /></span>
-
                         </button>
                         {isMenuOpen && (
                             <div className="absolute top-0 left-0 w-full">
@@ -226,12 +222,8 @@ const Navbar = () => {
                                                                 Sign up
                                                             </Link>
                                                         </li>
-
-
                                                     </>
                                             }
-
-
 
                                         </ul>
                                     </nav>

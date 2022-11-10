@@ -91,8 +91,6 @@ const Home = () => {
                 </Link>
             </div>
 
-
-
             <div>
                 <section className="p-5 py-7 dark:bg-gray-900 dark:text-gray-100">
                     <div className="container mx-auto grid justify-center grid-cols-2 text-center lg:grid-cols-3">
