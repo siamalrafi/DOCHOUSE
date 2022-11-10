@@ -6,10 +6,13 @@ The DOCHOUSE is a medical service provider that provider various service in reas
 ### GitHub  Link : https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-Rahathasandipto 
 
 
-$$$ Some Special Features Of This Website Are Available ------
+## Some Special Features Of This Website Are Available ------
 
-
-
+* This is a service provider  Websites
+* There are 2 private routes and and sign in option
+* The security option are top class . Here JWT token is available
+* User also can post there review and rating of my service 
+* They can add a new service that are not implemented yet and I will try to implement it.
 
 
 
