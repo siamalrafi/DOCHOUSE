@@ -25,7 +25,7 @@ const AddServices = () => {
             description: description
         };
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://dochouse-server.vercel.app/services', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

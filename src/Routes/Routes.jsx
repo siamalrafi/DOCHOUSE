@@ -21,7 +21,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/home/'),
+                loader: () => fetch('https://dochouse-server.vercel.app/home/'),
             },
             {
                 path: '/services',
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             {
                 path: '/services/:id',
                 element: <Details></Details>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://dochouse-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/myreviews',

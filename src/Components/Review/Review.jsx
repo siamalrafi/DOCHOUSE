@@ -16,7 +16,7 @@ const Review = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myreviews?email=${user?.email}`, {
+        fetch(`https://dochouse-server.vercel.app/myreviews?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('access_token')}`
             },
@@ -39,7 +39,7 @@ const Review = () => {
     const handleDelete = (id) => {
         const agree = window.confirm('Are you sure you ?');
         if (agree) {
-            fetch(`http://localhost:5000/myreviews/${id}`, {
+            fetch(`https://dochouse-server.vercel.app/myreviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

@@ -11,9 +11,9 @@ const ReviewCard = ({ myreivew, handleUpdate, handleDelete }) => {
     const notifyUpdate = () => toast.success("Successfully Updated!");
     const { customarName, massage, _id, serviceImg, serviceName, rating } = myreivew;
 
- 
+
     const handleUpdateInput = (event) => {
-     
+
 
 
         event.preventDefault();
@@ -25,7 +25,7 @@ const ReviewCard = ({ myreivew, handleUpdate, handleDelete }) => {
             rating: rating,
             massage: massage
         }
-        fetch(`http://localhost:5000/myreviews/${_id}`, {
+        fetch(`https://dochouse-server.vercel.app/myreviews/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
@@ -72,10 +72,7 @@ const ReviewCard = ({ myreivew, handleUpdate, handleDelete }) => {
                     </h2>
                     <p>{massage}</p>
                     <div className="card-actions justify-end">
-                        <button onClick={() => console.log(_id)}>onclick</button>
-
-
-
+   
                         <button
                             onClick={() => handleDelete(_id)}
                             className="bg-red-800 text-white p-4 badge">Delete</button>

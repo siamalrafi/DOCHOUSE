@@ -9,7 +9,7 @@ const Services = () => {
 
     useEffect(() => {
         document.title = ("Services")
-        fetch('http://localhost:5000/services')
+        fetch('https://dochouse-server.vercel.app/services')
             .then(res => res.json())
             .then(data => {
                 setServices(data)

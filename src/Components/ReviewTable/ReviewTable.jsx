@@ -5,6 +5,10 @@ const ReviewTable = ({ review }) => {
     const { user } = useState(AuthContext);
     const { rating, customarName, email, massage, photoURL, serviceId, } = review;
 
+
+
+
+
     return (
         <div>
             <div className="overflow-x-auto w-full">

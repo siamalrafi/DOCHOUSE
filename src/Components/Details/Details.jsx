@@ -16,12 +16,14 @@ const Details = () => {
     const notify = () => toast.success("Successfully Review Added!");
     const { user } = useContext(AuthContext);
     const details = useLoaderData();
-    const [reviews, setReviews] = useState([]);
     const { img, _id, name, price, rating, description } = details;
+    const [reviews, setReviews] = useState([]);
+    const [displayRiv, setDisplayRiv] = useState(reviews);
 
-
+  
+  
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?serviceId=${_id}`)
+        fetch(`https://dochouse-server.vercel.app/reviews?serviceId=${_id}`)
             .then(res => res.json())
             .then(data => {
                 setReviews(data);
@@ -54,7 +56,7 @@ const Details = () => {
             serviceImg: img,
         };
 
-        fetch(`http://localhost:5000/reviews`, {
+        fetch(`https://dochouse-server.vercel.app/reviews`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -64,6 +66,7 @@ const Details = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
+
                     // setReviews([...review,])
                     notify();
                     form.reset();
@@ -86,7 +89,7 @@ const Details = () => {
                             </PhotoView>
                         </PhotoProvider>
                         <h2 className="mb-1 text-xl font-semibold">{name}</h2>
-                        <p className="text-sm dark:text-gray-400"> {description?.slice(0, 10)}</p>
+                        <p className="text-sm dark:text-gray-400"> {description}</p>
                     </div>
                     <div className="flex flex-wrap justify-between">
 
