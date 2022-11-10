@@ -32,7 +32,6 @@ const Login = () => {
                 const currentUser = {
                     email: user?.email
                 };
-                
                 notify();
                 fetch(`https://dochouse-server.vercel.app/jwt`, {
                     method: 'POST',
@@ -58,8 +57,22 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user);
-                notify()
-                navigate(from, { replace: true });
+                notify();
+                const currentUser = {
+                    email: user?.email
+                };
+                fetch(`https://dochouse-server.vercel.app/jwt`, {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json',
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem('access_token', data.token)
+                        navigate(from, { replace: true });
+                    })
             })
             .catch((error) => {
                 notifyError()

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -12,6 +12,10 @@ import { Helmet } from 'react-helmet';
 
 
 const SignUp = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+    
     const notify = () => toast.success("Successfully Sign Up !");
     const notifyError = () => toast.error("An error in here Please, Try again!");
     const { createUser, nameUpdate, googleSignIn } = useContext(AuthContext);
@@ -40,11 +44,28 @@ const SignUp = () => {
 
     const handleGoogleSign = () => {
 
+        const from = location.state?.from?.pathname || "/";
         googleSignIn()
             .then((result) => {
                 const user = result.user;
-                console.log(user);
+                // console.log(user);
                 notify();
+               
+                const currentUser = {
+                    email: user?.email
+                };
+                fetch(`https://dochouse-server.vercel.app/jwt`, {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json',
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem('access_token', data.token)
+                        navigate(from, { replace: true });
+                    })
             })
             .catch((error) => {
                 notifyError()

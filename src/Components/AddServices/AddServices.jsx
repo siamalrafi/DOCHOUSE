@@ -59,7 +59,7 @@ const AddServices = () => {
             </Helmet>
             <div className='bg-gray-500 w-full 	'>
                 <form onSubmit={handleAddService}>
-                    <h2 className="text-center text-black font-bold my-5 text-4xl">Add Your Service</h2>
+                    <h2 className="text-center text-black py-5 font-bold my-5 text-4xl"><b className='text-black'>Add Your Service</b></h2>
                     <div className='grid lg:grid-cols-2 sm:grid-cols-1 justify-items-center'>
                         <input name='serviceName'
                             type="text" placeholder="Type Service Name" className="mt-2 input input-bordered input-error w-full max-w-xs" required />
