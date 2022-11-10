@@ -251,22 +251,23 @@ const Home = () => {
                         <h2 className="mb-12 text-4xl font-bold leading-none text-center sm:text-5xl">Frequently Asked Questions</h2>
                         <div className="flex flex-col divide-y sm:px-8 lg:px-12 xl:px-32 divide-gray-700">
                             <details>
-                                <summary className="py-2 outline-none cursor-pointer focus:underline">Optio maiores eligendi molestiae totam dolores similique?</summary>
+                                <summary className="py-2 outline-none cursor-pointer focus:underline">What is the DOCHOUSE ?</summary>
                                 <div className="px-4 pb-4">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde neque in fugiat magni, quas animi enim veritatis deleniti ex. Impedit.</p>
+                                    <p>
+                                        Dochouse is a personal medical service provider that provides some medical services for people . There are some extra facilities that are really importance to better service. Without this facility isn't possible.                                         
+                                    </p>
                                 </div>
                             </details>
                             <details>
-                                <summary className="py-2 outline-none cursor-pointer focus:underline">Modi dolorem veritatis culpa quos consequuntur beatae itaque excepturi perspiciatis?</summary>
+                                <summary className="py-2 outline-none cursor-pointer focus:underline">How expensive the service of Dochouse?</summary>
                                 <div className="px-4 pb-4">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aspernatur quae, eos explicabo odit minima libero veniam similique quibusdam doloribus facilis ipsa accusantium vel maiores corrupti! Libero voluptate a doloribus?</p>
+                                    <p>It's a good Questions . If you want to best service then it's must that the service fee will be heigh. Because there are many issues for this region. </p>
                                 </div>
                             </details>
                             <details>
-                                <summary className="py-2 outline-none cursor-pointer focus:underline">Magni reprehenderit possimus debitis?</summary>
+                                <summary className="py-2 outline-none cursor-pointer focus:underline">Which one are the best seller service ?</summary>
                                 <div className="px-4 pb-4 space-y-2">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates aspernatur dolores in consequatur doloremque inventore reprehenderit, consequuntur perspiciatis architecto.</p>
-                                    <p>Sed consectetur quod tenetur! Voluptatibus culpa incidunt veritatis velit quasi cupiditate unde eaque! Iure, voluptatibus autem eaque unde possimus quae.</p>
+                                    <p>Every services are very popular .Most of the people are want to do something. Like medical service and other lot of services .</p>
                                 </div>
                             </details>
                         </div>
