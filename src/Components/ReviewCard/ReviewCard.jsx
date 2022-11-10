@@ -3,7 +3,6 @@ import { FaStar } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
-import AuthContext from '../Context/AuthProvider/AuthProvider'
 
 
 const ReviewCard = ({ myreivew, handleUpdate, handleDelete }) => {
@@ -38,13 +37,8 @@ const ReviewCard = ({ myreivew, handleUpdate, handleDelete }) => {
                     notifyUpdate()
                     form.reset()
                 }
-
             })
-
     }
-
-
-
 
 
     return (
@@ -72,7 +66,7 @@ const ReviewCard = ({ myreivew, handleUpdate, handleDelete }) => {
                     </h2>
                     <p>{massage}</p>
                     <div className="card-actions justify-end">
-   
+
                         <button
                             onClick={() => handleDelete(_id)}
                             className="bg-red-800 text-white p-4 badge">Delete</button>

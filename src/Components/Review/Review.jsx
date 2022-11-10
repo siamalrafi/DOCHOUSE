@@ -52,8 +52,7 @@ const Review = () => {
         }
     };
 
-    // console.log(myreivews);
-
+ 
 
     return (
         <div>

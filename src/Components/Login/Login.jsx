@@ -7,8 +7,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from 'react-helmet';
 
 
-
-
 const Login = () => {
     const { googleSignIn, signIn } = useContext(AuthContext);
     const notify = () => toast.success("Successfully Login !");
@@ -42,6 +40,7 @@ const Login = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
+                        notify();
                         localStorage.setItem('access_token', data.token)
                         navigate(from, { replace: true });
                     })
@@ -57,7 +56,7 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user);
-                notify();
+
                 const currentUser = {
                     email: user?.email
                 };
@@ -70,6 +69,7 @@ const Login = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
+                        notify();
                         localStorage.setItem('access_token', data.token)
                         navigate(from, { replace: true });
                     })
@@ -100,13 +100,11 @@ const Login = () => {
                         <label htmlFor="password" className="block dark:text-gray-400">Password</label>
                         <input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
                         <div className="flex justify-end text-xs dark:text-gray-400">
-                            <a rel="noopener noreferrer" href="#">Forgot Password?</a>
+                            <a rel="noopener noreferrer" href="/">Forgot Password?</a>
                         </div>
                     </div>
                     <button className="block w-full p-3 text-center rounded-sm dark:text-gray-900 dark:bg-violet-400">Sign in</button>
                 </form>
-
-
 
                 <div className="flex items-center pt-4 space-x-1">
                     <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
