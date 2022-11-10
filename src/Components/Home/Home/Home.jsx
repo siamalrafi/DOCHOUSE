@@ -94,7 +94,7 @@ const Home = () => {
 
 
             <div>
-                <section className="dark:bg-gray-900 dark:text-gray-100">
+                <section className="p-5 py-7 dark:bg-gray-900 dark:text-gray-100">
                     <div className="container mx-auto grid justify-center grid-cols-2 text-center lg:grid-cols-3">
                         <div className="flex flex-col justify-start  ">
                             <p className="text-4xl font-bold leading-none lg:text-6xl">50+</p>
