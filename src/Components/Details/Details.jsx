@@ -11,17 +11,13 @@ import { Helmet } from 'react-helmet';
 
 
 
-
 const Details = () => {
     const notify = () => toast.success("Successfully Review Added!");
     const { user } = useContext(AuthContext);
     const details = useLoaderData();
     const { img, _id, name, price, rating, description } = details;
     const [reviews, setReviews] = useState([]);
-    const [displayRiv, setDisplayRiv] = useState(reviews);
-
-  
-  
+ 
     useEffect(() => {
         fetch(`https://dochouse-server.vercel.app/reviews?serviceId=${_id}`)
             .then(res => res.json())
@@ -57,6 +53,8 @@ const Details = () => {
             serviceImg: img,
         };
 
+        // set the review massage 
+
         fetch(`https://dochouse-server.vercel.app/reviews`, {
             method: 'POST',
             headers: {
@@ -91,7 +89,6 @@ const Details = () => {
                         <p className="text-sm dark:text-gray-400"> {description}</p>
                     </div>
                     <div className="flex flex-wrap justify-between">
-
                         <div className="space-x-2">
                             <button aria-label="Share this post" type="button" className="p-2 text-center">
                                 <FaShareAlt className='text-orange-400'></FaShareAlt>
@@ -113,7 +110,6 @@ const Details = () => {
                                 <span className='text-2xl'>{rating}</span>
                             </button>
                         </div>
-
                     </div>
                 </div>
                 <hr />
@@ -128,8 +124,6 @@ const Details = () => {
                         </ReviewTable>)
                     }
                 </div>
-
-
 
                 <h1 className="text-3xl text-black font-semibold bg-red-400 my-5 p-5 px-5 rounded">Add Reivew</h1>
 
@@ -160,8 +154,8 @@ const Details = () => {
 
                         </div>
                     </form>
+                    
                     <ToastContainer position="top-center" />
-
                 </div>
             </div>
             <Helmet>
