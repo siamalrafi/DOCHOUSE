@@ -7,7 +7,7 @@ import routers from './Routes/Routes';
 function App() {
   const { loading } = useContext(AuthContext);
 
-  if (loading) {
+/*   if (loading) {
     return <div>
       <div className='grid grid-cols-6 my-20 mx-5'>
         <h1 className="text-5xl text-orange-400 font-bold">Loading</h1>
@@ -31,7 +31,7 @@ function App() {
       </div>
     </div>
   }
-
+ */
   return (
     <RouterProvider router={routers}>
 

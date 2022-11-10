@@ -15,7 +15,7 @@ const SignUp = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
-    
+
     const notify = () => toast.success("Successfully Sign Up !");
     const notifyError = () => toast.error("An error in here Please, Try again!");
     const { createUser, nameUpdate, googleSignIn } = useContext(AuthContext);
@@ -50,7 +50,7 @@ const SignUp = () => {
                 const user = result.user;
                 // console.log(user);
                 notify();
-               
+
                 const currentUser = {
                     email: user?.email
                 };

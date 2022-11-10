@@ -4,8 +4,7 @@ import ReviewCard from '../ReviewCard/ReviewCard';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from 'react-helmet';
-import SingleService from '../Services/SingleService/SingleService';
-
+ 
 
 const Review = () => {
     const notify = () => toast.success("Successfully Deleted!");
