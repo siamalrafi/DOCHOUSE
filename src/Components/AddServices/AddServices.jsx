@@ -43,12 +43,8 @@ const AddServices = () => {
             .catch(error => {
                 notifyError();
                 console.log(error);
-            })
-
-
+            });
     };
-
-
 
 
     return (
@@ -76,7 +72,7 @@ const AddServices = () => {
                         <input type="submit" className='btn text-center btn-active btn-success' value="Submit" />
                     </div>
                 </form>
-                
+
                 <ToastContainer position="top-center" />
 
             </div>
