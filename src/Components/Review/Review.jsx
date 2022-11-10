@@ -31,8 +31,6 @@ const Review = () => {
                 setMyReviews(data)
 
             })
-
-
     }, [user?.email]);
 
 

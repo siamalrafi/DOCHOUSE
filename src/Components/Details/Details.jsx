@@ -26,7 +26,8 @@ const Details = () => {
         fetch(`https://dochouse-server.vercel.app/reviews?serviceId=${_id}`)
             .then(res => res.json())
             .then(data => {
-                setReviews(data);
+                const reverse = data.reverse()
+                setReviews(reverse);
                 // console.log(data);
             })
     }, [_id]);
@@ -66,9 +67,7 @@ const Details = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-
-                    // setReviews([...review,])
-                    notify();
+                     notify();
                     form.reset();
                 }
                 console.log(data)
