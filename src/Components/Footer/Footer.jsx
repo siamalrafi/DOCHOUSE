@@ -2,6 +2,8 @@ import React from 'react';
 import { FaDochub, FaHireAHelper } from 'react-icons/fa';
 
 const Footer = () => {
+
+    
     return (
         <div>
             <footer className="px-4 divide-y dark:bg-gray-800 dark:text-gray-100">

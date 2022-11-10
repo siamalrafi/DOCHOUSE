@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
+    
     return (
         <div>
 
@@ -17,7 +18,6 @@ const ErrorPage = () => {
                     </div>
                 </div>
             </section>
-
 
         </div>
     );
